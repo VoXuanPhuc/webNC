@@ -49,38 +49,6 @@
         </div>
         <!-- end mid header -->
         <!-- bottom header -->
-<<<<<<< HEAD
-        <div class="bg-second">
-            <div class="bottom-header container">
-                <ul class="main-menu">
-                    <li><a href="<?php echo URL;?>danhmuc?giay-nike&sp=1">giày nike</a></li>
-                    <li><a href="<?php echo URL;?>danhmuc?giay-adidas&sp=2">GIÀY ADIDAS</a></li>
-                    <li><a href="<?php echo URL;?>danhmuc?giay-vans&sp=3">GIÀY VANS</a></li>
-                    <?php $i = 4;
-                    foreach ($data_chitietDM as $row): ?>
-                        <!-- mega menu -->
-                        <li class="mega-dropdown">
-                            <a href="<?php echo URL; ?>danhmuc?giay-the-thao&sp=<?= $i ?>">giày thể thao</a>
-                            <div class="mega-content">
-                                <div class="row">
-                                    <div class="col-3 col-md-12" id="loaisanpham">
-                                        <div class="box" style="display: flex;">
-                                            <?php foreach ($row as $value) { ?>
-                                                <h3><a href="<?php echo URL; ?>danhmuc?sp=<?= $value['MaDM'] ?>&loai=<?= $value['TenLSP'] ?>"><?= $value['TenLSP'] ?></a></h3>
-                                            <?php } ?>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                    <?php 
-                    break;
-                    endforeach; ?>
-                </ul>
-            </div>
-        </div>
-=======
->>>>>>> 0cbb5a4 (thuy update)
         <!-- end bottom header -->
     </div>
     <!-- end main header -->

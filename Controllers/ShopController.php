@@ -66,7 +66,10 @@ class ShopController
         echo '<!DOCTYPE html>
         <html lang="vi-vn">
         
+<<<<<<< HEAD
          
+=======
+>>>>>>> 9a4f480 (init base)
         <head>
             <meta charset="UTF-8">
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
