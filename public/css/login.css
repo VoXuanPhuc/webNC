@@ -1,0 +1,55 @@
+:root {
+    --main-bg-color: rgb(252, 252, 252);
+    --second-bg-color: #ececec;
+    --third-bg-color: #e3e3e3;
+    --grey: #4b4b4b;
+    --black: #000;
+    --red: #c0392b;
+    --top-header-size: 25px;
+    --mid-header-size: 50px;
+    --bottom-header-size: 35px;
+    --btn-bg: #000;
+    --btn-border-color: #000;
+    --btn-color: #fff;
+}
+#container{
+    max-height: 45rem;
+}
+#container .left_dangnhap{
+    max-width: 45%;
+    background: var(--second-bg-color) ;
+    position: relative;
+    left: 3rem;
+    text-align: center;
+}
+
+.dangnhap_dangky, .section-header{
+    position: relative;
+    top: -1rem;
+}
+#container .right_dangky{
+    max-width: 45%;
+    background: var(--second-bg-color) ;
+    text-align: center;
+    position: relative;
+    left: 52%;
+    top: -17.5rem;
+}
+.left_dangnhap div h3,.right_dangky div h3{
+    position: relative;
+    top: 1rem;
+}
+.lg_dangnhap{
+    padding: 1rem ;
+}
+.lg_dangnhap input{
+    width: 70%;
+    height: 2rem;
+    font-size: 1rem;
+    border: none;
+    box-shadow: 0px 0px 1px 1px rgba(85, 85, 85, 0.644) ;
+    padding-left: 1rem;
+}
+.lg_dangnhap input:focus{
+    outline: none;
+}
