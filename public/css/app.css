@@ -1,6 +1,7 @@
 :root {
     --main-bg-color: #38B6FF;
     --content-bg-color:#d1eaf8;
+    /* --main-bg-color: rgb(252, 252, 252); */
     --second-bg-color: #f1f1f1;
     --third-bg-color: #e3e3e3;
     --grey: #4b4b4b;
@@ -23,10 +24,10 @@
 }
 
 body{
-    /* font-family: "Poppins", sans-serif; */
+    font-family: "Poppins", sans-serif;
     overflow-x: hidden;
     position: relative;
-    background-color: var(--content-bg-color);
+    background-color: var(--main-bg-color);
     overflow-x: hidden;
     scroll-behavior: smooth;
 }
@@ -74,8 +75,7 @@ img {
 }
 
 .bg-second {
-    background-color: var(--main-bg-color);
-     width: 100%;
+    background-color: var(--second-bg-color);
 }
 
 .bg-main {
@@ -339,6 +339,16 @@ a:hover{
     position: relative;
 } */
 /* 
+    padding: 0 20px;
+    background-image: linear-gradient( 180deg,#fffffe 10%,#ffe8d142 100%);
+}
+
+.slider,
+.slider .container {
+    height: 100%;
+    position: relative;
+}
+
 .slide {
     height: 0;
     position: absolute;
@@ -379,6 +389,9 @@ a:hover{
 } */
 
 /* .btn-flat {
+}
+
+.btn-flat {
     display: inline-block;
     border: 2px solid #f00;
     background-color: var(--second-bg-color);
@@ -435,6 +448,10 @@ a:hover{
 
 /* slide animation */
 /* .top-down {
+}
+
+/* slide animation */
+.top-down {
     transform: translateY(-100%);
     opacity: 0;
     visibility: hidden;
@@ -480,7 +497,8 @@ a:hover{
     transform: translateX(0);
     opacity: 1;
     visibility: visible;
-} */
+} 
+
 /* end slide animation */
 
 .trans-delay-0-2 {
@@ -1191,6 +1209,7 @@ div#filter-col {
         width: 110%;
     }
     /* .slide > .info{
+    .slide > .info{
         display: none;
     }
     .slide > .img {
@@ -1203,6 +1222,7 @@ div#filter-col {
         left: 25%;
         /* top: 2rem; */
     /* }
+    }
 
     .info-content p {
         display: none;
