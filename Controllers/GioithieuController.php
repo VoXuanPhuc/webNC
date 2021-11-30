@@ -22,7 +22,6 @@ class GioithieuController
         
         <head>
             <meta charset="UTF-8">
-            <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>GIÀY BAEShop – Hệ thống giày thể thao số 1 Đà Nẵng</title>
             <!-- google font -->

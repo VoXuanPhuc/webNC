@@ -1,4 +1,4 @@
-<div class="col-3 filter-col" id="filter-col">
+<div class="col-lg-3 col-md-3 col-sm-0 filter-col" id="filter-col">
     <div class="box filter-toggle-box">
         <button class="btn-flat btn-hover" id="filter-close">close</button>
     </div>

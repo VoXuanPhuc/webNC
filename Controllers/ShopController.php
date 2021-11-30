@@ -66,6 +66,7 @@ class ShopController
         echo '<!DOCTYPE html>
         <html lang="vi-vn">
         
+         
         <head>
             <meta charset="UTF-8">
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -77,9 +78,12 @@ class ShopController
             <!-- boxicons -->
             <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet">
             <!-- app css -->
-            <link rel="icon" href="../public/images/logo/BAEShop_transparent.png">
-            <link rel="stylesheet" href="../public/css/app.css">
-            <link rel="stylesheet" href="../public/css/grid.css">
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+            <link rel="stylesheet" href="<?php echo URL; ?>public/css/app.css">
+            <link rel="stylesheet" href="<?php echo URL; ?>public/css/grid.css">
+            <link rel="stylesheet" href="../public/css/app.css?v=<?php echo time(); ?>">
+            <link rel="stylesheet"
+                href="../public/css/grid.css?v=<?php echo time(); ?>">
         </head>
         
         <body>';

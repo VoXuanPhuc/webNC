@@ -28,7 +28,7 @@
     <link rel="stylesheet" href="../public/css/grid.css?v=<?php echo time(); ?>">
 </head>
 
-<body>
+<body style="background: #d1eaf8">
     <?php
         require_once('Views/header_footer/header.php');
     ?>
