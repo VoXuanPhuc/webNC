@@ -54,9 +54,13 @@
                             <p style="font-weight: 0;" class="product-description">
                                 <?= $data['KieuDang'] ?> </p>
                         <div class="product-info-price"><?= number_format($data['DonGia']) ?> ₫</div>
-                        <div>
-                            <button class="btn-flat btn-hover"> Mua ngay
-                            </button>
+                        <div class="cart__active">
+                            <div >
+                                <a href="<?php echo URL;?>./giohang/cart.php" class="btn-flat btn-hover">Mua ngay</a>
+                            </div>
+                            <div class = "add__cart">
+                                <a href="<?php echo URL;?>./giohang/?act=cart&xuli=add&id=<?=$data['MaSP']?>" class="btn-flat btn-hover">Thêm vào giỏ hàng</a>
+                            </div>
                         </div>
                     </div>
                 </div>
