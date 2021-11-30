@@ -1,5 +1,5 @@
     <!-- footer -->
-    <footer class="bg-second">
+    <footer class="container-fluid">
         <div class="container">
             <div class="row">
                 <div class="col-3 col-md-6">
