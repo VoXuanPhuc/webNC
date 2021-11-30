@@ -1,5 +1,7 @@
 :root {
-    --main-bg-color: rgb(252, 252, 252);
+    
+    --main-bg-color: #38B6FF;
+    --content-bg-color:#d1eaf8;
     --second-bg-color: #ececec;
     --third-bg-color: #e3e3e3;
     --grey: #4b4b4b;
