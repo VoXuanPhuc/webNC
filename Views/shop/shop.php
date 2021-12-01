@@ -1,7 +1,7 @@
     <!-- end header -->
 
-    <!-- products content -->
-    <div class="bg-main">
+    <!-- products content bg-main -->
+    <div class="">
         <div class="container">
             <div class="box">
                 <div class="breadcumb">

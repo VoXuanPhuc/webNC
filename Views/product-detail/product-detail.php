@@ -1,6 +1,6 @@
 <?php if ($data != null) { ?>
     <!-- product-detail content -->
-    <div class="bg-main">
+    <div class="container-fluid">
         <div class="container">
             <div class="box">
                 <div class="breadcumb">
@@ -12,7 +12,7 @@
                 </div>
             </div>
             <div class="row product-row">
-                <div class="col-5 col-md-12">
+                <div class="col-5 col-lg-5 col-md-4 col-12">
                     <?php if ($data['HinhAnh1'] !=  null) { ?>
                         <div class="product-img" id="product-img">
                             <img src="<?php echo URL; ?>public/images/<?= $data['HinhAnh1'] ?>" alt="">
@@ -35,7 +35,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-7 col-md-12" style="position: relative;left: 5rem;top: 1rem;">
+                <div class="col-7 col-lg-7 col-md-8 col-12" style="position: relative;left: 5rem;top: 1rem;">
                     <div class="product-info">
                         <h3>
                             <?= $data['TenSP'] ?>
@@ -61,6 +61,7 @@
                             <div class = "add__cart">
                                 <a href="<?php echo URL;?>./giohang/?act=cart&xuli=add&id=<?=$data['MaSP']?>" class="btn-flat btn-hover">Thêm vào giỏ hàng</a>
                             </div>
+
                         </div>
                     </div>
                 </div>
@@ -80,6 +81,7 @@
             </div>
         </div>
     </div>
+
     <script src="<?php echo URL; ?>public/js/product-detail.js"></script>
 <?php } else {
     require_once("../Views/error-404.php");

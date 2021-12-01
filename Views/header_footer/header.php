@@ -14,29 +14,12 @@
             <i class='bx bx-x'></i>
         </span>
         <!-- top header -->
-        <div class="bg-second">
-            <div class="top-header container">
-                <ul class="devided">
-                    <li>
-                        <a style="font-size: 14px;">Hệ thống cửa hàng BaeShop</a>
-                    </li>
-                </ul>
-                <ul class="devided" style="text-transform: uppercase;">
-                    <li class="dropdown">
-                        <a href="">Kiểm tra đơn hàng</a>
-                    </li>
-                    <li>
-                        <a href="<?php echo URL; ?>gioithieu/">giới thiệu</a>
-                    </li>
-                    <li><a href="<?php echo URL; ?>gioithieu/lienhe.php">Liên hệ</a></li>
-                </ul>
-            </div>
-        </div>
+        
         <!-- end top header -->
         <!-- mid header -->
-        <div class="bg-main">
+        <div class="bg-main position-sticky">
             <div class="mid-header container">
-                <a href="<?php echo URL; ?>" class="logo"><img src="<?php echo URL; ?>public/images/logo/BAEShop_transparent.png" alt=""></a>
+                <a href="<?php echo URL; ?>" class="logo"><img src="<?php echo URL; ?>public/images/logo/logo.png" alt=""></a>
                 <form class="search" action="<?php echo URL; ?>danhmuc/" method="post">
                     <input type="text" placeholder="Tìm kiếm..." name="keyword">
                     <button class="btn-search"><i class="bx bx-search-alt"></i></button>
@@ -101,6 +84,7 @@
         </div>
         <!-- end mid header -->
         <!-- bottom header -->
+<<<<<<< HEAD
         <div class="bg-second">
             <div class="bottom-header container">
                 <ul class="main-menu">
@@ -130,6 +114,8 @@
                 </ul>
             </div>
         </div>
+=======
+>>>>>>> 0cbb5a4 (thuy update)
         <!-- end bottom header -->
     </div>
     <!-- end main header -->

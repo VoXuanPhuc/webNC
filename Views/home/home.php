@@ -13,13 +13,12 @@ require_once("banner.php");
             ?> <?php
                 for ($i = 0; $i < count($data_sanpham1); $i++) {
                 ?>
-
-                    <div class="col-3 col-md-6 col-sm-12">
+                    <div class="col-lg-3 col-md-6 col-sm-12 col-12">
                         <a href="<?php echo URL; ?>sanpham/?<?= $data_sanpham1[$i]['TenSP'] ?>&id=<?= $data_sanpham1[$i]['MaSP'] ?>">
                             <div class="product-card">
                                 <div class="product-card-img">
-                                    <img src="public/images/<?= $data_sanpham1[$i]['HinhAnh1'] ?>" alt="">
-                                    <img src="public/images/<?= $data_sanpham1[$i]['HinhAnh2'] ?>" alt="">
+                                    <img src="public/images/<?= $data_sanpham1[$i]['HinhAnh1'] ?>" alt=""  height="100%" >
+                                    <img src="public/images/<?= $data_sanpham1[$i]['HinhAnh2'] ?>" alt=""  height="100%">
                                 </div>
                                 <div class="product-card-info">
                                     <div class="product-card-name">
@@ -56,13 +55,13 @@ require_once("banner.php");
                 <?php
                 for ($i = 0; $i < count($data_sanpham2); $i++) {
                 ?>
-                    <div class="col-3 col-md-6 col-sm-12">
+                    <div class="col-lg-3 col-md-6 col-sm-12 col-12">
 
                         <a href="<?php echo URL; ?>sanpham/?<?= $data_sanpham1[$i]['TenSP'] ?>&id=<?= $data_sanpham2[$i]['MaSP'] ?>">
                             <div class="product-card">
                                 <div class="product-card-img">
-                                    <img src="public/images/<?= $data_sanpham2[$i]['HinhAnh1'] ?>" alt="">
-                                    <img src="public/images/<?= $data_sanpham2[$i]['HinhAnh2'] ?>" alt="">
+                                    <img src="public/images/<?= $data_sanpham2[$i]['HinhAnh1'] ?>" alt=""  height="100%">
+                                    <img src="public/images/<?= $data_sanpham2[$i]['HinhAnh2'] ?>" alt="" height="100%">
                                 </div>
                                 <div class="product-card-info">
                                     <div class="product-card-name">

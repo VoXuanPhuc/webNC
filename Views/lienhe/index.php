@@ -15,11 +15,11 @@
 <div style="justify-items: center;text-align: center;">
     <h3 class="footer-head">Liên Hệ</h3>
     <ul class="menu" style="padding: 1rem;">
-        <li><a href="#"><i class='bx bxs-map'></i> 470 Trần Đại Nghĩa, <br> Trường Đại Học Công Nghệ Thông Tin-Truyền Thông VIỆT-HÀN</a></li>
+        <li><a href="#"><i class='bx bxs-map'></i> 48 Cao Thắng, <br> Trường Đại Học Sư phạm Kỹ Thuật/a></li>
         <br>
         <li><a href="#"><i class='bx bxs-phone-call'></i> (+84) 866 171 367
                 <br><i class='bx bxs-phone-call'></i> (+84) 866 171 367</a></li>
         <br>
-        <li><a href="#"><i class='bx bx-mail-send'></i> vku@vku.udn.vn</a></li>
+        <li><a href="#"><i class='bx bx-mail-send'></i> dhspkt.ute.udn.vn</a></li>
     </ul>
 </div>
