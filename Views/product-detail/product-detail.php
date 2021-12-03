@@ -55,8 +55,10 @@
                                 <?= $data['KieuDang'] ?> </p>
                         <div class="product-info-price"><?= number_format($data['DonGia']) ?> ₫</div>
                         <div>
-                            <button class="btn-block btn-danger btn w-50" > Mua ngay
-                            </button>
+                            <a href="./giohang/cart.php" class="btn-block btn-danger btn w-25">Mua ngay</a>
+                        </div>
+                        <div>
+                            <a href="<?php echo URL;?>./giohang/?act=cart&xuli=add&id=<?=$data['MaSP']?>" class="btn-block btn-danger btn w-25">Thêm vào giỏ hàng</a>
                         </div>
                     </div>
                 </div>

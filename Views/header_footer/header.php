@@ -1,3 +1,4 @@
+
 <!-- header -->
 <header>
     <!-- mobile menu -->
@@ -43,7 +44,34 @@
                             <?php } ?>
                         </ul>
                     </li>
-                    <li><a href="#"><i class='bx bx-cart'></i></a></li>
+                    <li id="user-circle"><a href="http://localhost:8088/baeshop.com/giohang/?act=cart#dxd"> <i class='bx bx-cart'></i></a>
+                        <div  id="dang_nhap" class="cart">
+                            <?php
+                                if (isset($_SESSION['sanpham'])) { 
+                                    foreach ($_SESSION['sanpham'] as $value) { ?>
+                                    <div class="cart__item">
+                                        <div class="cart-img">
+                                            <img src="<?php echo URL; ?>./public/images/<?= $value['HinhAnh1'] ?>" alt="" class = "cart__item-img">
+                                            <span class = "container-cart-name container__name"><?= $value['TenSP'] ?></span>
+                                        </div>
+                                        <div class="cart__price">
+                                            <?= number_format($value['DonGia']) ?> VNĐ
+                                        </div>
+                                    </div>
+                                <?php }}
+                            ?>  
+                        </div>
+                    </li>
+
+                    <div class="item-quantity">
+                        <?php if (isset($_SESSION['sanpham'])){?>
+                            <span class="item-quantity-notice"><?php echo count($_SESSION['sanpham']); ?></span>
+                        <?php }
+                        else {?>
+                            <span class="item-quantity-notice"><?php echo "0"; ?></span>
+                        <?php }?>
+                        <!-- <span class="item-quantity-notice">3</span> -->
+                    </div>
                 </ul>
             </div>
         </div>
