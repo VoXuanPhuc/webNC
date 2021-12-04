@@ -82,6 +82,13 @@
 .user-menu #user-circle:hover #dang_nhap{
     display:block;
 }
+
+.user-menu #user-circle:hover + .section{
+    position: relative;
+    z-index: -1;
+    background: red !important;
+}
+
 /* medium screen */
 
 @media only screen and (max-width: 1150px) {

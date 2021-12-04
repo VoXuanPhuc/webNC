@@ -45,6 +45,64 @@
                 <?php }
                 } ?>  
         </div>
+        <!-- <div class="row margin-top">
+			<div class="col-6">
+				<div class="single-cart-form padding60">
+					<div class="log-title">
+						<h3><strong>Chi tiết đơn hàng</strong></h3>
+					</div>
+					<div class="cart-form-text pay-details table-responsive">
+						<form action="?act=checkout" method="post">
+							<table>
+								<tbody>
+									<tr>
+										<th>Tổng Giỏ Hàng</th>
+										<td><?= number_format($count) ?> VNĐ</td>
+									</tr>
+									<tr>
+										<th>Giảm giá</th>
+										<td>0%</td>
+									</tr>
+									<tr>
+										<th>Vận Chuyển</th>
+										<td>15,000 VNĐ</td>
+									</tr>
+									<tr>
+										<th>Vat</th>
+										<td>0 VNĐ</td>
+									</tr>
+								</tbody>
+								<tfoot>
+									<tr>
+										<th class="tfoot-padd">Tổng tiền</th>
+										<td class="tfoot-padd"><?=number_format($count+15000)?> VNĐ</td>
+									</tr>
+								</tfoot>
+							</table>
+							<div class="submit-text coupon">
+								<button type="submit">Đặt hàng</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="col-6">
+				<div class="single-cart-form padding60">
+					<div class="log-title">
+						<h3><strong>Mã giảm giá</strong></h3>
+					</div>
+					<div class="cart-form-text custom-input">
+						<p>Nhập mã giảm giá nếu bạn có !!</p>
+						<form action="" method="post">
+							<input type="text" name="subject" placeholder="Nhập mã tại đây..." />
+							<div class="submit-text coupon">
+								<button type="submit">Áp dụng</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div> -->
     </div>
 </div>
 
