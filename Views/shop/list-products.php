@@ -33,15 +33,29 @@
                 echo '<p> KHÔNG CÓ SẢN PHẨM NÀO TẠI ĐÂY </p>';
             } ?>
         </div>
-
-
         <div class="box">
+            
+            <nav aria-label="Page navigation example">
             <ul class="pagination">
-
+                <li class="page-item">
+                    <a class="page-link m-0" href="#" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
                 <?php $nextpage = $data_tong / 3;
-                 for ($i = 1; $i <= $nextpage; $i++) { ?>
-                    <li class=""><a href="?page=<?= $i ?>"><?= $i ?></a></li>
+                for ($i = 1; $i <= $nextpage; $i++) { ?>                        
+                    <li class="page-item">
+                        <a class="page-link m-0 <?php if(isset($_GET['page']) and $_GET['page'] == $i) {echo "active";}  ?>" href="?page=<?= $i ?>">
+                            <?= $i ?>
+                        </a>
+                    </li>
                 <?php } ?>
+                <li class="page-item">
+                <a class="page-link m-0" href="#" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+                </li>
             </ul>
+            </nav>
         </div>
     </div>
