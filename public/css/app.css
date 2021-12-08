@@ -75,7 +75,7 @@ img {
 }
 
 .bg-second {
-    background-color: var(--second-bg-color);
+    background-color: var(--main-bg-color);
 }
 
 .bg-main {
@@ -217,13 +217,25 @@ ul.devided > li:last-child {
     display: flex;
     color: white;
 }
-
+.user-menu > li {
+    color: white;
+}
 .user-menu > li > a {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
+    margin-top: 15px;
     margin-left: 1.6rem;
+    color: inherit;
+    text-decoration: none;
 }
 a:hover{
     color: var(--red);
+    text-decoration: none;
+}
+.submenu-a{
+    color: #000;
+}
+li > b{
+    color: #000 !important;
 }
 .bottom-header {
     display: flex;
@@ -244,9 +256,12 @@ a:hover{
     font-weight: 500;
     height: 100%;
     text-transform: uppercase;
+    color: white;
+    text-decoration: none;
 }
 
 .main-menu > li {
+    color: white;
     border-bottom: 2px solid transparent;
     border-top: 2px solid transparent;
 }
@@ -332,7 +347,16 @@ a:hover{
     margin-top: 20px;
 
 }
-
+/* banner */
+.carousel-inner{
+    width:100%;
+    height: 450px;
+}
+.carousel-inner .carousel-item{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 /* .slider, */
 /* .slider .container {
     height: 100%;

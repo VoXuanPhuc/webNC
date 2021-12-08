@@ -35,15 +35,15 @@
                         <ul id="dang_nhap">
                             <?php if (isset($_SESSION['login'])) { ?>
                                 <li><b>Chào <?= $_SESSION['login']['Ho'] ?> <?= $_SESSION['login']['Ten'] ?></b></li>
-                                <li><a href="<?php echo URL; ?>buyer/login-signup/?act=taikhoan&xuli=account">Tài khoản</a></li>
-                                <li><a href="<?php echo URL; ?>buyer/login-signup/?act=taikhoan&xuli=dangxuat">Đăng xuất</a></li>
+                                <li><a class="submenu-a" href="<?php echo URL; ?>buyer/login-signup/?act=taikhoan&xuli=account">Tài khoản</a></li>
+                                <li><a class="submenu-a" href="<?php echo URL; ?>buyer/login-signup/?act=taikhoan&xuli=dangxuat">Đăng xuất</a></li>
                                 <?php
                                 if (isset($_SESSION['isLogin_Admin'])) { ?>
-                                    <li><a href="<?php echo URL; ?>admin/?mod=login">Trang quản lý</a></li>
+                                    <li><a class="submenu-a" href="<?php echo URL; ?>admin/?mod=login">Trang quản lý</a></li>
                                 <?php }
                             } else { ?>
-                                <li><b>Khách hàng</b></li>
-                                <li><a href="<?php echo URL; ?>buyer/login-signup/?buyer-login&act=taikhoan">Đăng nhập</a></li>
+                                <li><b style="color: #0000;">Khách hàng</b></li>
+                                <li><a class="submenu-a" href="<?php echo URL; ?>buyer/login-signup/?buyer-login&act=taikhoan">Đăng nhập</a></li>
                             <?php } ?>
                         </ul>
                     </li>
@@ -80,6 +80,22 @@
         </div>
         <!-- end mid header -->
         <!-- bottom header -->
+        <div class="bg-second">
+            <div class="bottom-header container">
+                <ul class="main-menu">
+                    <li><a href="<?php echo URL; ?>danhmuc/giay-nike.html">giày nike</a></li>
+                    <li><a href="<?php echo URL; ?>danh-muc/giay-adidas.html">GIÀY ADIDAS</a></li>
+                    <li><a href="<?php echo URL; ?>danh-muc/giay-vans.html">GIÀY VANS</a></li>
+
+                    <!-- mega menu -->
+                    <li class="mega-dropdown">
+                        <a href="<?php echo URL; ?>danh-muc/giay-thuong-hieu-khac.html">giày thương hiệu khác</a>
+                    </li>
+                    <!-- end mega menu -->
+
+                </ul>
+            </div>
+        </div>
         <!-- end bottom header -->
     </div>
     <!-- end main header -->
