@@ -1,4 +1,7 @@
-
+<script>
+    var x = document.getElementsByClassName("mobile-menu");
+    window.console.log(x);
+</script>
 <!-- header -->
 <header>
     <!-- mobile menu -->

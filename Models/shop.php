@@ -2,6 +2,14 @@
 require_once("model.php");
 class Shop extends Model
 {
+    function allsp()
+    {
+        $query = "SELECT * FROM sanpham";
+
+        require("result.php");
+
+        return $data;
+    }
 
     function loaisp($a, $b)
     {

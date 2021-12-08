@@ -42,10 +42,16 @@
                         <span aria-hidden="true">&laquo;</span>
                     </a>
                 </li>
-                <?php $nextpage = $data_tong / 3;
+                <?php $nextpage = $data_tong / 9;
+                    $nextpage = ceil($nextpage);
                 for ($i = 1; $i <= $nextpage; $i++) { ?>                        
                     <li class="page-item">
-                        <a class="page-link m-0 <?php if(isset($_GET['page']) and $_GET['page'] == $i) {echo "active";}  ?>" href="?page=<?= $i ?>">
+                        <a class="page-link m-0 
+                        <?php if(isset($_GET['page'])){ 
+                                if ($_GET['page'] == $i) 
+                                {echo "active";} }
+                            else if ($i==1) echo"active";  
+                                ?>" href="?page=<?= $i ?>">
                             <?= $i ?>
                         </a>
                     </li>

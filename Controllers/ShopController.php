@@ -19,6 +19,7 @@ class ShopController
         for ($i = 4; $i <= count($data_danhmuc); $i++) {
             $data_chitietDM[$i] = $this->shop_model->chitietdanhmuc($i);
         }
+
         if (isset($_GET['page'])) {
             $id = $_GET['page'];
             $limit = 9;
@@ -30,14 +31,14 @@ class ShopController
         }
 
 
-        if (isset($_GET['sp']) and isset($_GET['loai'])) {
-            $data_loai = $this->shop_model->chitiet_loai($_GET['loai'], $_GET['sp']);
-            if ($data_loai != null) {
-                $data = $this->shop_model->chitiet($data_loai[0]['MaLSP'], $_GET['sp']);
-                $data_noibat = $this->shop_model->sanpham_noibat();
-                $data_count = $this->shop_model->count_sp_ctdm($_GET['sp'], $data_loai[0]['MaLSP']);
+        if (!isset($_GET['sp']) && !isset($_GET['loai']) && !isset($_GET['page'])) {
+                $id = 1;
+                $limit = 9;
+                $start = ($id - 1) * $limit;
+                $data = $this->shop_model->limit($start, $limit);
+                $data_count = $this->shop_model->count_sp();
                 $data_tong = $data_count['tong'];
-            }
+                
         } else {
             if (isset($_GET['sp'])) {
                 $data = $this->shop_model->sanpham_danhmuc(0, 9, $_GET['sp']);
