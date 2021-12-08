@@ -5,7 +5,7 @@
                 <div class="col-lg-3 col-md-6 col-sm-12 col-12">
                     <h3 class="footer-head">Liên Hệ</h3>
                     <ul class="menu">
-                        <li><a href="#"><i class='bx bxs-map'></i> 470 Trần Đại Nghĩa, <br> Trường Đại Học Công Nghệ Thông Tin-Truyền Thông VIỆT-HÀN</a></li>
+                        <li><a href="#"><i class='bx bxs-map'></i> 38 Cao Thắng, <br> Trường Đại Học Sư Phạn Kỹ Thuật</a></li>
                         <li><a href="#"><i class='bx bxs-phone-call'></i> (+84) 866 171 367
                                 <br><i class='bx bxs-phone-call'></i> (+84) 866 171 367</a></li>
                         <li><a href="#"><i class='bx bx-mail-send'></i> vku@vku.udn.vn</a></li>
