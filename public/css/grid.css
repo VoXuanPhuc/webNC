@@ -79,14 +79,14 @@
     border-top: .1rem solid var(--grey) ;
     border-radius: 6px;
 }
-.user-menu #user-circle:hover #dang_nhap{
+.user-menu #user-circle:hover #dang_nhap {
     display:block;
+    z-index: 111;
 }
 
 .user-menu #user-circle:hover + .section{
     position: relative;
-    z-index: -1;
-    background: red !important;
+    z-index: 1;
 }
 
 /* medium screen */

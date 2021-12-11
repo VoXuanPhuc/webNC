@@ -74,7 +74,7 @@
                 </div>
                 <?php require_once('danhgia.php'); ?>
                 
-                <form <?php if(false) {echo"hidden";}?> action="<?php echo URL; ?>sanpham/?act=vote" method="post">
+                <form <?php if($statusCheck == 1) {echo "hidden";}?> action="<?php echo URL; ?>sanpham/?act=saveVote" method="post">
                     <div class="input-group">
                         <input name="MaSP" value="<?= $data['MaSP'] ?>" type="hidden"/>
                         <input name="MaKH" value="14" type="hidden"/>
