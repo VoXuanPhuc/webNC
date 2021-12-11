@@ -73,8 +73,8 @@ require_once("banner.php");
                                     </div>
                                 </div>
                             </div>
-
-                    </div></a>
+                        </a>
+                    </div>
                 <?php } ?>
             <?php
 
