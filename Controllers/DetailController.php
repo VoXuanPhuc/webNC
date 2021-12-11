@@ -60,10 +60,7 @@ class DetailController
             '
             <script src="<?php echo URL; ?>public/js/index.js"></script>
             <script src="<?php echo URL; ?>public/js/app.js"></script>
-<<<<<<< HEAD
             
-=======
->>>>>>> 9a4f480 (init base)
         </body>
         
         </html>';
