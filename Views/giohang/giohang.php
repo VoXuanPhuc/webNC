@@ -7,8 +7,6 @@
 </div>
 <div style="position: relative; top: 2rem;" class="section" id="blogs">
     <div class="container">
-        
-
         <div class="header">
             <div class = "header-item col-4" >Sản phẩm</div>
             <div class = "header-item col-2" >Giá</div>
@@ -23,6 +21,7 @@
                     foreach ($_SESSION['sanpham'] as $value) { ?>
                         <div class="content__cart">
                             <div class="container__div-first col-4" >
+								<input clas="content__cart-input" type="checkbox" value="" name="" id="">
                                 <img src="<?php echo URL; ?>public/images/<?= $value['HinhAnh1'] ?>" alt="" class = "cart__img">
                                 <p class = "container-cart-name"><?= $value['TenSP'] ?></p>
                             </div>
@@ -45,6 +44,22 @@
                 <?php }
                 } ?>  
         </div>
+
+		<div class="checkout">
+			<div class="checkout-desc">
+				<div class = "checkout-desc-text">
+					<span>Tổng sản phẩm : </span>
+					<span class=""><?php echo count($_SESSION['sanpham']); ?></span>
+				</div>
+				<div class = "checkout-desc-price">
+					<span>Tổng thanh toán : </span>
+					<span class=""><?= number_format($count) ?> đ</span>
+				</div>
+				<div>
+                    <a href="<?php echo URL;?>./giohang/checkout.php" class="btn-block btn-danger btn w-100">Mua hàng</a>
+                </div>
+			</div>
+		</div>
         <!-- <div class="row margin-top">
 			<div class="col-6">
 				<div class="single-cart-form padding60">

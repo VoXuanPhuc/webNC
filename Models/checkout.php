@@ -30,10 +30,13 @@ class Checkout extends Model
     
     if ($status == true and $status_ct = true) {
         setcookie('msg', 'Đăng ký thành công', time() + 2);
-        header('location: ?act=checkout&xuli=order_complete');
+        echo '<script language="javascript">';
+        echo 'alert("message successfully sent")';
+        echo '</script>';
+        header('location: ?act=checkout&xuli=add');
     } else {
         setcookie('msg', 'Đăng ký không thành công', time() + 2);
-        header('location: ?act=checkout');
+        header('location: ?act=order-error');
     }
   }
 }
