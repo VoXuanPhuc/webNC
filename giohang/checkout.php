@@ -16,16 +16,20 @@ switch ($mod) {
             case 'add':
                 $controller_obj->order_complete();
                 break;
+            case 'detail':
+                $mahd = isset($_GET['MaHD']) ? $_GET['MaHD'] : "0";
+                $controller_obj->detail($mahd);
+                break;  
             default:
                 $controller_obj->list();
                 break;
         }
         break;
-        case 'order-error':
-            require_once('../Controllers/CheckoutController.php');
-            $controller_obj = new CheckoutController();
-            $controller_obj->list();
-            break;
+    case 'order-error':
+        require_once('../Controllers/CheckoutController.php');
+        $controller_obj = new CheckoutController();
+        $controller_obj->list();
+        break;
                 
            
         

@@ -39,4 +39,18 @@ class Checkout extends Model
         header('location: ?act=order-error');
     }
   }
+
+  function detail($data){
+
+    $query_detail = "SELECT  hd.MaHD, cthd.MaSP, sp.TenSP, sp.HinhAnh1, cthd.SoLuong, cthd.DonGia
+                    from hoadon as hd, chitiethoadon as cthd, sanpham as sp
+                    where hd.MaHD=cthd.MaHD and cthd.MaSP=sp.MaSP and hd.MaHD= $data ";
+    $data_listsp = $this->conn->query($query_detail);
+    $data = array();
+    while ($row = $data_listsp->fetch_assoc()) {
+      $data[] = $row;
+    }
+    return $data_listsp;
+  }
+
 }

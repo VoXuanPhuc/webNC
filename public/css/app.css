@@ -1712,3 +1712,10 @@ input[type="checkbox"] {
 }
 
 
+
+.modal-cart{
+    display: none !important;
+}
+.modal-cart.open{
+    display: block !important;
+}
