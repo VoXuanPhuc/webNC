@@ -61,6 +61,9 @@ class CheckoutController
             </body>
             
             </html>';
+        } else {
+            header('location: /baeshop.com/');
+            echo "<script>alert('Ban Chua Login');</script>"; 
         }
         //  else {
         //     header('location: ?buyer-login&act=add');

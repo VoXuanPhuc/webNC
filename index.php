@@ -2,6 +2,11 @@
 session_start();
 $mod = isset($_GET['act']) ? $_GET['act'] : "home";
 switch ($mod) {
+    case "search" :
+        require_once('Controllers/HomeController.php');
+        $controller_obj = new HomeController();
+        $controller_obj->search();
+        break;
     case 'home':
         require_once('Controllers/HomeController.php');
         $controller_obj = new HomeController();
