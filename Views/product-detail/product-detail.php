@@ -51,14 +51,14 @@
                                 <i class='bx bxs-star-half'></i>
                             </span>
                         </div>
-                            <p style="font-weight: 0;" class="product-description">
-                                <?= $data['KieuDang'] ?> </p>
+                        <p style="font-weight: 0;" class="product-description">
+                            <?= $data['KieuDang'] ?> </p>
                         <div class="product-info-price"><?= number_format($data['DonGia']) ?> ₫</div>
                         <div>
                             <a href="<?php echo URL;?>./giohang/checkout.php" class="btn-block btn-danger btn w-25">Mua ngay</a>
                         </div>
                         <div>
-                            <a href="<?php echo URL;?>./giohang/?act=cart&xuli=add&id=<?=$data['MaSP']?>" class="btn-block btn-danger btn w-25">Thêm vào giỏ hàng</a>
+                            <a href="<?php echo URL; ?>./giohang/?act=cart&xuli=add&id=<?= $data['MaSP'] ?>" class="btn-block btn-danger btn w-25">Thêm vào giỏ hàng</a>
                         </div>
                     </div>
                 </div>
@@ -69,13 +69,29 @@
                 </div>
                 <div class="product-detail-description">
                     <div class="product-detail-description-content">
-                            <?= $data['MoTa'] ?> </p>
-                            <img src="<?php echo URL; ?>public/images/<?= $data['HinhAnh1'] ?>" alt="">
-                            <img src="<?php echo URL; ?>public/images/<?= $data['HinhAnh2'] ?>" alt="">
-                            <img src="<?php echo URL; ?>public/images/<?= $data['HinhAnh3'] ?>" alt="">
+                        <p><?= $data['MoTa'] ?> </p>
                     </div>
                 </div>
+                <?php require_once('danhgia.php'); ?>
+                
+                <form <?php if($statusCheck == 1) {echo "hidden";}?> action="<?php echo URL; ?>sanpham/?act=saveVote" method="post">
+                    <div class="input-group">
+                        <input name="MaSP" value="<?= $data['MaSP'] ?>" type="hidden"/>
+                        <input name="MaKH" value="14" type="hidden"/>
+                        <select name="sao" class="form-select" aria-label="Default select example">
+                            <option selected>Chọn Sao</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                        <textarea name="noidung" class="form-control" aria-label="With textarea"></textarea>
+                        <button type="submit" class="input-group-text">Đánh giá</button>
+                    </div>
+                </form>
             </div>
+
         </div>
     </div>
 

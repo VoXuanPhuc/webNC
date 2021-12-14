@@ -1055,7 +1055,7 @@ div#filter-col {
     text-align: justify;
     line-height: 26px;
     font-size: 1rem;
-    height: 400px;
+    height: auto;
     overflow-y: hidden;
     position: relative;
 }
@@ -1470,11 +1470,9 @@ input[type="checkbox"] {
 .product-img-list{
     position: relative;
     top: 2rem;
-    max-width: 50%;
-    left: 25%;
 }
 .product-img-list img{
-    width: 55%;
+    width: 100%;
 
 }
 @media only screen and (max-width: 768px) {
@@ -1711,11 +1709,42 @@ input[type="checkbox"] {
     margin-top: 0 !important;
 }
 
+/* rating */
 
 
+<<<<<<< HEAD
 .modal-cart{
     display: none !important;
 }
 .modal-cart.open{
     display: block !important;
 }
+=======
+/* Rating */
+
+.user-name-vote {
+    display: flex;
+}
+
+.col-left b {
+    color: #ffcd4e;
+    font-size: 24px;
+  }
+  .col-right button {
+    margin: 10px;
+    color: #df2f4c;
+    background-color: white;
+    width: 100px;
+    height: 40px;
+    font-size: 18px;
+    margin-top: 20px;
+  }
+  @media only screen and (max-width: 600px) {
+    body {
+      background-color: lightblue;
+    }
+    #dropdown {
+      display: block;
+    }
+  }
+>>>>>>> dfcaf3830997ac3780261f8632a5e594576c1a43
