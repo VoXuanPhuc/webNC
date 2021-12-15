@@ -59,7 +59,7 @@
 
 				<div class="checkout-bill">
 					<h3 class="checkout-bill-desc">Thông tin hóa đơn</h3>
-					<form action="?act=checkout&xuli=save" method="post">
+					<form action="<?php echo URL; ?>giohang/checkout.php?act=checkout&xuli=save" method="post">
 						<div class="checkout-bill-name">
 							<div class="checkout-bill-form">
 								<label for="" class="checkout-bill-form-text">Họ tên khách hàng</label>

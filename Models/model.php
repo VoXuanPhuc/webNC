@@ -65,4 +65,10 @@ class model
         
         return $data;
     }
+
+
+    function search($search) {
+        $sql = "SELECT * FROM SANPHAM WHERE SANPHAM.TenSP like '%". $search . "%'";
+        return $this->conn->query($sql);
+    }
 }

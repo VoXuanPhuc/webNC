@@ -14,16 +14,57 @@
             <i class='bx bx-x'></i>
         </span>
         <!-- top header -->
-        
+
         <!-- end top header -->
         <!-- mid header -->
         <div class="bg-main position-sticky">
             <div class="mid-header container">
                 <a href="<?php echo URL; ?>" class="logo"><img src="<?php echo URL; ?>public/images/logo/logo.png" alt=""></a>
-                <form class="search" action="<?php echo URL; ?>danhmuc/" method="post">
-                    <input type="text" placeholder="Tìm kiếm..." name="keyword">
-                    <button class="btn-search"><i class="bx bx-search-alt"></i></button>
+                <form autocomplete="off" class="search" action="<?php echo URL; ?>danhmuc/" method="post">
+                    <input id="searchInput" type="text" placeholder="Tìm kiếm..." name="keyword" />
+                    <button class="btn-search">
+                        <i class="bx bx-search-alt"></i>
+                    </button>
+
                 </form>
+                <ul id="dexuat" style="
+                        position: relative;
+                        top: 141px;
+                        width: 35%;
+                        height: auto;
+                        left: -222px;
+                        z-index: 1000;
+                        display: block;
+                    " class="list-group">
+                    
+                </ul>
+                <script>
+                    $(document).ready(function(){
+                        $('#searchInput').keyup(function() {
+                            var search = $('#searchInput').val();
+
+                            if (search != "") {
+                                $.ajax(
+                                    {
+                                        url : '/baeshop.com/index.php?act=search',
+                                        method: 'POST',
+                                        data: {search: search},
+                                        success : function (data) {
+                                            $('#dexuat').html(data);
+                                        }
+                                    }
+                                );
+                            }
+                            else {
+                                $('#dexuat').html("");
+                            }
+                            $(document).on('click', 'li', function() {
+                                $('#searchInput').val($(this).text());
+                                $('#dexuat').html('');
+                            });
+                        });
+                    })
+                </script>
 
                 <ul class="user-menu">
                     <li><a href="#"><i class='bx bx-bell'></i></a></li>
@@ -44,32 +85,32 @@
                             <?php } ?>
                         </ul>
                     </li>
-                    <li id="user-circle" class="js-model"><a href="http://localhost:8088/baeshop.com/giohang/?act=cart#dxd"> <i class='bx bx-cart'></i></a>
+                    <li id="user-circle" class="js-model"><a href="<?php echo URL; ?>giohang/?act=cart#dxd"> <i class='bx bx-cart'></i></a>
                         <div  id="dang_nhap" class="cart modal-cart">
                             <?php
-                                if (isset($_SESSION['sanpham'])) { 
-                                    foreach ($_SESSION['sanpham'] as $value) { ?>
+                            if (isset($_SESSION['sanpham'])) {
+                                foreach ($_SESSION['sanpham'] as $value) { ?>
                                     <div class="cart__item">
                                         <div class="cart-img">
-                                            <img src="<?php echo URL; ?>./public/images/<?= $value['HinhAnh1'] ?>" alt="" class = "cart__item-img">
-                                            <span class = "container-cart-name container__name"><?= $value['TenSP'] ?></span>
+                                            <img src="<?php echo URL; ?>./public/images/<?= $value['HinhAnh1'] ?>" alt="" class="cart__item-img">
+                                            <span class="container-cart-name container__name"><?= $value['TenSP'] ?></span>
                                         </div>
                                         <div class="cart__price">
                                             <?= number_format($value['DonGia']) ?> VNĐ
                                         </div>
                                     </div>
-                                <?php }}
-                            ?>  
+                            <?php }
+                            }
+                            ?>
                         </div>
                     </li>
 
                     <div class="item-quantity">
-                        <?php if (isset($_SESSION['sanpham'])){?>
+                        <?php if (isset($_SESSION['sanpham'])) { ?>
                             <span class="item-quantity-notice"><?php echo count($_SESSION['sanpham']); ?></span>
-                        <?php }
-                        else {?>
+                        <?php } else { ?>
                             <span class="item-quantity-notice"><?php echo "0"; ?></span>
-                        <?php }?>
+                        <?php } ?>
                         <!-- <span class="item-quantity-notice">3</span> -->
                     </div>
                 </ul>
@@ -79,7 +120,7 @@
         <!-- bottom header -->
         <div class="bg-second">
             <div class="bottom-header container">
-                <ul class="main-menu">
+                <ul id="submenu" class="main-menu">
                     <li><a href="<?php echo URL; ?>danhmuc/giay-nike.html">giày nike</a></li>
                     <li><a href="<?php echo URL; ?>danh-muc/giay-adidas.html">GIÀY ADIDAS</a></li>
                     <li><a href="<?php echo URL; ?>danh-muc/giay-vans.html">GIÀY VANS</a></li>
@@ -97,4 +138,5 @@
     </div>
     <!-- end main header -->
 </header>
+
 <!-- end header -->

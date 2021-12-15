@@ -32,4 +32,17 @@ class HomeController
 
         require_once('Views/index.php');
     }
+
+    function search() {
+        if($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $search = $_POST['search'];
+            $result = $this->home_model->search($search);
+            if (mysqli_num_rows($result)) 
+            {
+                while ($row = mysqli_fetch_assoc($result)) {
+                    echo '<li style="cursor: context-menu;" class="list-group-item">'. $row['TenSP'].'</li>';
+                }
+            }
+        }
+    }
 }

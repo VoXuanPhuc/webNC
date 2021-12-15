@@ -61,6 +61,9 @@ class CheckoutController
             </body>
             
             </html>';
+        } else {
+            header('location: /baeshop.com/');
+            echo "<script>alert('Ban Chua Login');</script>"; 
         }
         //  else {
         //     header('location: ?buyer-login&act=add');
@@ -128,6 +131,7 @@ class CheckoutController
                 <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet">
                 <!-- app css -->
                 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+                <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
                 <link rel="stylesheet" href="<?php echo URL; ?>public/css/app.css">
                 <link rel="stylesheet" href="<?php echo URL; ?>public/css/grid.css">
                 <link rel="stylesheet" href="../public/css/app.css?v=<?php echo time(); ?>">

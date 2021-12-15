@@ -29,11 +29,9 @@ switch ($mod) {
         require_once('../Controllers/CheckoutController.php');
         $controller_obj = new CheckoutController();
         $controller_obj->list();
-        break;
-                
-           
+        break;         
         
-        default:
+    default:
         require_once('../Controllers/CheckoutController.php');
         $controller_obj = new CheckoutController();
         $controller_obj->list();
