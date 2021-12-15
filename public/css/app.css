@@ -351,6 +351,11 @@ li > b{
     margin-top: 20px;
 
 }
+
+.carousel{
+    z-index: -2;
+}
+
 /* banner */
 .carousel-inner{
     width:100%;

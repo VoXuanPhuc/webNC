@@ -40,7 +40,7 @@ class HomeController
             if (mysqli_num_rows($result)) 
             {
                 while ($row = mysqli_fetch_assoc($result)) {
-                    echo '<li class="list-group-item">'. $row['TenSP'].'</li>';
+                    echo '<li style="cursor: context-menu;" class="list-group-item">'. $row['TenSP'].'</li>';
                 }
             }
         }

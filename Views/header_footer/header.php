@@ -31,6 +31,7 @@
                         position: relative;
                         top: 141px;
                         width: 35%;
+                        height: auto;
                         left: -222px;
                         z-index: 1000;
                         display: block;
@@ -50,7 +51,6 @@
                                         data: {search: search},
                                         success : function (data) {
                                             $('#dexuat').html(data);
-                                            console.log(data);
                                         }
                                     }
                                 );
@@ -58,8 +58,11 @@
                             else {
                                 $('#dexuat').html("");
                             }
-
-                        })
+                            $(document).on('click', 'li', function() {
+                                $('#searchInput').val($(this).text());
+                                $('#dexuat').html('');
+                            });
+                        });
                     })
                 </script>
 
@@ -116,7 +119,7 @@
         <!-- bottom header -->
         <div class="bg-second">
             <div class="bottom-header container">
-                <ul class="main-menu">
+                <ul id="submenu" class="main-menu">
                     <li><a href="<?php echo URL; ?>danhmuc/giay-nike.html">giày nike</a></li>
                     <li><a href="<?php echo URL; ?>danh-muc/giay-adidas.html">GIÀY ADIDAS</a></li>
                     <li><a href="<?php echo URL; ?>danh-muc/giay-vans.html">GIÀY VANS</a></li>
