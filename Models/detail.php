@@ -39,7 +39,7 @@ class Detail extends Model
 
         while ($row = $result->fetch_assoc()) {
             $voteSanPham[] = $row;
-        }
+        }z
         return $voteSanPham;
     }
 
