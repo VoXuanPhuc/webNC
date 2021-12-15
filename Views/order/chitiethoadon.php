@@ -21,16 +21,16 @@
 					
 					<?php
                     if (isset( $data_sanpham )) {
-						foreach($data_sanpham as $row){
+						foreach($data_sanpham as $row_sp){
 						?>
                         <div class="content__cart">
 							<div class="col-2">
 								<img src="<?php echo URL; ?>public/images/<?= $value['HinhAnh1'] ?>" alt="">
 							</div>
                             <div class="col-4" >
-								<?php echo  $row ['TenSP'] ?>
+								<?php echo  $row_sp ['TenSP'] ?>
 							</div>
-                            <div class="col-3"><?php echo  $row ['DonGia'] ?></div>
+                            <div class="col-3"><?php echo  $row_sp ['DonGia'] ?></div>
                             <div class="col-3">
 								<a href="">Đánh giá</a>
 							</div> 
