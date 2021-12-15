@@ -1,10 +1,10 @@
 <?php 
-$result = $this->conn->query($query);
+    $result = $this->conn->query($query);
 
-$data = array();
+    $data = array();
 
-while ($row = $result->fetch_assoc()) {
-    $data[] = $row;
-}
+    while ($row = $result->fetch_assoc()) {
+        $data[] = $row;
+    }
 ?>
 

@@ -1717,6 +1717,14 @@ input[type="checkbox"] {
 /* rating */
 
 
+<<<<<<< HEAD
+.modal-cart{
+    display: none !important;
+}
+.modal-cart.open{
+    display: block !important;
+}
+=======
 /* Rating */
 
 .user-name-vote {
@@ -1744,3 +1752,4 @@ input[type="checkbox"] {
       display: block;
     }
   }
+>>>>>>> dfcaf3830997ac3780261f8632a5e594576c1a43

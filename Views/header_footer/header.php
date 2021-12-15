@@ -68,24 +68,25 @@
 
                 <ul class="user-menu">
                     <li><a href="#"><i class='bx bx-bell'></i></a></li>
-                    <li id="user-circle"><a><i class='bx bx-user-circle'></i></a>
-                        <ul id="dang_nhap">
+                    <li id="user-circle" class="js-model"><a><i class='bx bx-user-circle'></i></a>
+                        <ul id="dang_nhap" class="modal-cart">
                             <?php if (isset($_SESSION['login'])) { ?>
                                 <li><b>Chào <?= $_SESSION['login']['Ho'] ?> <?= $_SESSION['login']['Ten'] ?></b></li>
+                                <li><a class="submenu-a" href="<?php echo URL; ?>giohang/checkout.php?act=checkout&xuli=add">Lịch sử mua hàng</a></li>
                                 <li><a class="submenu-a" href="<?php echo URL; ?>buyer/login-signup/?act=taikhoan&xuli=account">Tài khoản</a></li>
                                 <li><a class="submenu-a" href="<?php echo URL; ?>buyer/login-signup/?act=taikhoan&xuli=dangxuat">Đăng xuất</a></li>
                                 <?php
                                 if (isset($_SESSION['isLogin_Admin'])) { ?>
                                     <li><a class="submenu-a" href="<?php echo URL; ?>admin/?mod=login">Trang quản lý</a></li>
-                                <?php }
+                                    <?php }
                             } else { ?>
                                 <li><b style="color: #0000;">Khách hàng</b></li>
                                 <li><a class="submenu-a" href="<?php echo URL; ?>buyer/login-signup/?buyer-login&act=taikhoan">Đăng nhập</a></li>
                             <?php } ?>
                         </ul>
                     </li>
-                    <li id="user-circle"><a href="<?php echo URL; ?>giohang/?act=cart#dxd"> <i class='bx bx-cart'></i></a>
-                        <div id="dang_nhap" class="cart">
+                    <li id="user-circle" class="js-model"><a href="<?php echo URL; ?>giohang/?act=cart#dxd"> <i class='bx bx-cart'></i></a>
+                        <div  id="dang_nhap" class="cart modal-cart">
                             <?php
                             if (isset($_SESSION['sanpham'])) {
                                 foreach ($_SESSION['sanpham'] as $value) { ?>
