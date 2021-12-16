@@ -9,12 +9,12 @@ class DetailController
         $this->detail_model = new Detail();
     }
 
-    function checkVote($idSP)
+    function checkVote($idSP, $MaHD)
     {
         if (isset($_SESSION['login']['MaND'])) {
 
             $MaND = $_SESSION['login']['MaND'];
-            $VoteStatus = $this->detail_model->checkVoted($MaND, $idSP);
+            $VoteStatus = $this->detail_model->checkVoted($MaND, $idSP, $MaHD);
             
             if (isset($VoteStatus['voted'])) {
                 $statusCheck = $VoteStatus['voted'];
@@ -39,7 +39,7 @@ class DetailController
                 'noidung' => $_POST['noidung'],
                 'hinhanh' => ''
             );
-            $this->detail_model->saveVote($data);
+            $this->detail_model->saveVote($data, $_POST['MaHD']);
         }
     }
 

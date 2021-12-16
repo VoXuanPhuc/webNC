@@ -76,6 +76,7 @@
                 
                 <form <?php if($statusCheck == 1) {echo "hidden";}?> action="<?php echo URL; ?>sanpham/?act=saveVote" method="post">
                     <div class="input-group">
+                        <input type="hidden" value="<?php if(isset($_GET['MaHD'])) {echo ($_GET['MaHD']);} ?>" name="MaHD" />
                         <input name="MaSP" value="<?= $data['MaSP'] ?>" type="hidden"/>
                         <input name="MaKH" value="14" type="hidden"/>
                         <select name="sao" class="form-select" aria-label="Default select example">

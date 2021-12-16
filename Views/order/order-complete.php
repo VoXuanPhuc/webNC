@@ -25,14 +25,13 @@
 					<?php
 					$servername = "localhost";
 					$username = "root";
-					$password = "";
+					$password = "admin1234";
 					$dbname = "baeshop";
 					// tạo connection
 					$conn = mysqli_connect($servername, $username, $password, $dbname);
 					// kiểm tra connection
 					$sql = "SELECT * FROM hoadon";
 					$result = mysqli_query($conn, $sql);
-					$row = mysqli_fetch_assoc($result)
 					?>
 					<?php
                 if (mysqli_num_rows($result) > 0) {
@@ -44,7 +43,10 @@
                             <div class="col-2"><?php echo $row['NgayLap'] ?></div>
                             <div class="col-2"><?php echo $row['TongTien'] ?></div>
                             <div class="col-2">
-								<a href="<?php echo URL; ?>/giohang/checkout.php?act=checkout&xuli=detail&MaHD=<?php echo $row['MaHD']?>">Xem chi tiết</a>
+								<a
+								 href="<?php echo URL; ?>giohang/checkout.php?act=checkout&xuli=detail&MaHD=<?php echo $row['MaHD']?>">
+								 Xem chi tiết
+								</a>
 							</div> 
                         </div>                 
                 <?php }
