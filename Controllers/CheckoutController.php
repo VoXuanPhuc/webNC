@@ -161,7 +161,7 @@ class CheckoutController
         
         $data_sanpham = $this->checkout_model->detail($data);
 
-
+        
 
         echo'<!DOCTYPE html>
             <html lang="vi-vn">

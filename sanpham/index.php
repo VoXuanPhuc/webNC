@@ -6,7 +6,7 @@ $controller_obj = new DetailController();
 switch ($mod) {
     case 'voteSp':
         if (isset($_GET['id'])) {
-            $controller_obj->checkVote($_GET['id']);
+            $controller_obj->checkVote($_GET['id'], $_GET['MaHD']);
         } else {
             $controller_obj->list();
         }

@@ -20,20 +20,73 @@
     <link rel="stylesheet" href="<?php echo URL; ?>public/css/grid.css">
     <link rel="stylesheet" href="../public/css/app.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" href="../public/css/grid.css?v=<?php echo time(); ?>">
+
+    <style>
+
+        /* .centent{
+            display: none;
+        } */
+
+        .loader{
+            height: 100vh;
+            width: 100vw;
+            overflow: hidden;
+            background: #d1eaf8;
+            position: absolute;
+        }
+
+        .loader>div{
+            height: 40px;
+            width: 40px;
+            border: 5px solid #45474b;
+            border-top-color: #2a88e6;
+            position: absolute;
+            margin: auto;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 50%;
+            animation: spin 0.5s infinite linear;
+        }
+
+        @keyframes spin {
+            100%{
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+
 </head>
 
 <body style="background: #d1eaf8">
-    <?php
-    require_once('Views/header_footer/header.php');
-    ?>
+    <div class="loader">
+        <div>
 
-    <?php
-    require_once('dieuhuong.php');
-    ?>
+        </div>
+    </div>
 
-    <?php
-    require_once('Views/header_footer/footer.php');
-    ?>
+    <div class="centent">
+        <?php
+        require_once('Views/header_footer/header.php');
+        ?>
+
+        <?php
+        require_once('dieuhuong.php');
+        ?>
+
+        <?php
+        require_once('Views/header_footer/footer.php');
+        ?>
+    </div>
+    <script>
+        $(window).on('load', function(){
+            $('.loader').fadeOut(1500);
+            $('.content').fadeIn(1000);
+        });
+    </script>
+
+
     <!-- app js -->
     <script src="<?php echo URL; ?>public/js/index.js"></script>
     <script src="<?php echo URL; ?>public/js/app.js"></script>

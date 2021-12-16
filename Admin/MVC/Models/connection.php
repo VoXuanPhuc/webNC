@@ -1,5 +1,5 @@
 <?php 
-    define('URL','http://localhost/baeshop:8088.com/');
+    define('URL','http://localhost/baeshop.com/');
     class Connection{
         var $conn;
 
@@ -8,7 +8,7 @@
             //Thong so ket noi CSDL
             $severname ="localhost"; 
             $username ="root";
-            $password =""; 
+            $password ="admin1234"; 
             $db_name ="baeshop";
 
             //Tao ket noi CSDL

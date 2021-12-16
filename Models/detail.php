@@ -9,11 +9,11 @@ class Detail extends Model
         return $result->fetch_assoc();
     }
 
-    function saveVote($voute)
+    function saveVote($vote, $MaHD)
     {
         $f = "";
         $v = "";
-        foreach ($voute as $key => $value) {
+        foreach ($vote as $key => $value) {
             $f .= $key . ",";
             $v .= "'" . $value . "',";
         }
@@ -22,12 +22,13 @@ class Detail extends Model
         $query = "INSERT INTO danhgia($f) VALUES ($v);";
         $status = $this->conn->query($query);
         if ($status == true) {
+            $idSP = $vote['idSanpham'];
             $mand = $_SESSION['login']['MaND'];
             $queryupdatevoute = 
             "UPDATE chitiethoadon cthd, hoadon hd
-            set cthd.voted = 1 where cthd.MaHD = hd.MaHD and hd.MaND =  $mand;";
+            set cthd.voted = 1 where cthd.MaHD = hd.MaHD and hd.MaND =  $mand and cthd.MaSP = $idSP and hd.MaHD = $MaHD";
             $this->conn->query($queryupdatevoute);
-            header('Location: ' . '/baeshop.com');
+            header('Location: ' . '/baeshop.com/sanpham/?id='.$idSP);
         }
     }
 
@@ -39,7 +40,7 @@ class Detail extends Model
 
         while ($row = $result->fetch_assoc()) {
             $voteSanPham[] = $row;
-        }z
+        }
         return $voteSanPham;
     }
 
@@ -50,9 +51,9 @@ class Detail extends Model
         return $result->fetch_assoc();
     }
 
-    function checkVoted($idKh, $MaSP) {
+    function checkVoted($idKh, $MaSP, $MaHD) {
         $query = "SELECT voted from chitiethoadon cthd, hoadon h, nguoidung n
-        where cthd.MaHD = h.MaHD and h.MaND = n.MaND and n.MaND = $idKh and cthd.voted = 0 and cthd.MaSP = $MaSP ";
+        where cthd.MaHD = h.MaHD and h.MaND = n.MaND and n.MaND = $idKh and cthd.voted = 0 and cthd.MaSP = $MaSP and h.MaHD = $MaHD";
         $result = $this->conn->query($query);
         return $result->fetch_assoc();
     }

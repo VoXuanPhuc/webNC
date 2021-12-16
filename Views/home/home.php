@@ -1,3 +1,5 @@
+
+
 <?php
 require_once("banner.php");
 ?>
@@ -43,6 +45,7 @@ require_once("banner.php");
 <!-- end product list -->
 
 <!-- product list -->
+
 <div class="section">
     <div class="container">
         <div class="section-header">
@@ -82,4 +85,5 @@ require_once("banner.php");
         </div>
     </div>
 </div>
+
 <!-- end product list -->
