@@ -5,10 +5,10 @@
                 <div class="col-lg-3 col-md-6 col-sm-12 col-12">
                     <h3 class="footer-head">Liên Hệ</h3>
                     <ul class="menu">
-                        <li><a href="#"><i class='bx bxs-map'></i> 38 Cao Thắng, <br> Trường Đại Học Sư Phạn Kỹ Thuật</a></li>
-                        <li><a href="#"><i class='bx bxs-phone-call'></i> (+84) 866 171 367
-                                <br><i class='bx bxs-phone-call'></i> (+84) 866 171 367</a></li>
-                        <li><a href="#"><i class='bx bx-mail-send'></i> vku@vku.udn.vn</a></li>
+                        <li><a href="#"><i class='bx bxs-map'></i> 127 Đống Đa, <br> Thanh Bình, Hải Châu, Đà Nẵng</a></li>
+                        <li><a href="#"><i class='bx bxs-phone-call'></i> (+84) 436 171 367
+                                <br><i class='bx bxs-phone-call'></i> (+84) 236 264 236</a></li>
+                        <li><a href="#"><i class='bx bx-mail-send'></i> luckyshoe@gmail.com</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-12 col-12">
@@ -32,7 +32,7 @@
                 <div class="col-lg-3 col-md-6 col-sm-12 col-12">
                     <div class="contact">
                         <h3 class="contact-header">
-                            BAEShop
+                            Lucky Shoe
                         </h3>
                         <ul class="contact-socials">
                             <li><a href="#">
@@ -61,6 +61,6 @@
         </div>
     </footer>
     <div class="endfooter">
-        <div>© BAEShop <?php echo date('Y'); ?>. All Rights Reserved.</div>
+        <div>© LuckyShoe <?php echo date('Y'); ?>. All Rights Reserved.</div>
     </div>
     <!-- end footer -->
