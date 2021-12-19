@@ -23,9 +23,10 @@
 						<div class = "header-item col-2" >Thao tác</div>
 					</div>
 					<?php
+					// require_once("../../Models/connection.php");
 					$servername = "localhost";
 					$username = "root";
-					$password = "";
+					$password = "admin1234";
 					$dbname = "baeshop";
 					// tạo connection
 					$conn = mysqli_connect($servername, $username, $password, $dbname);

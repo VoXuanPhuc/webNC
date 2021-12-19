@@ -12,6 +12,7 @@ class Checkout extends Model
 		}
 		$f = trim($f, ",");
 		$v = trim($v, ",");
+		
 		$query = "INSERT INTO hoadon($f) VALUES ($v);";
 
 		$status = $this->conn->query($query);
@@ -29,7 +30,7 @@ class Checkout extends Model
 	
 				$status_ct = $this->conn->query($query_ct);
 			}
-			if ($status_ct = true) {
+			if ($status_ct == true) {
 				setcookie('msg', 'Đăng ký thành công', time() + 2);
 				echo '<script language="javascript">';
 				echo 'alert("message successfully sent")';
@@ -38,7 +39,7 @@ class Checkout extends Model
 			} else {
 				setcookie('msg', 'Đăng ký không thành công', time() + 2);
 				echo "lôi";
-				// header('location: ?act=order-error');
+				header('location: ?act=order-error');
 			}
 		}
 

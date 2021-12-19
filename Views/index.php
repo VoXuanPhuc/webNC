@@ -59,7 +59,7 @@
 
 </head>
 
-<body style="background: #d1eaf8">
+<body>
     <div class="loader">
         <div>
 

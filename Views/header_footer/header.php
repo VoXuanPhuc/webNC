@@ -1,13 +1,5 @@
 <!-- header -->
 <header>
-    <!-- mobile menu -->
-    <div class="mobile-menu bg-second">
-        <a href="index.php" class="mb-logo">BAEShop</a>
-        <span class="mb-menu-toggle" id="mb-menu-toggle">
-            <i class='bx bx-menu'></i>
-        </span>
-    </div>
-    <!-- end mobile menu -->
     <!-- main header -->
     <div class="header-wrapper" id="header-wrapper">
         <span class="mb-menu-toggle mb-menu-close" id="mb-menu-close">
@@ -18,7 +10,7 @@
         <!-- end top header -->
         <!-- mid header -->
         <div class="bg-main position-sticky">
-            <div class="mid-header container">
+            <div class="mid-header container" style="position: relative;">
                 <a href="<?php echo URL; ?>" class="logo"><img src="<?php echo URL; ?>public/images/logo/logo.png" alt=""></a>
                 <form autocomplete="off" class="search" action="<?php echo URL; ?>danhmuc/" method="post">
                     <input id="searchInput" type="text" placeholder="Tìm kiếm..." name="keyword" />
@@ -28,34 +20,34 @@
 
                 </form>
                 <ul id="dexuat" style="
-                        position: relative;
-                        top: 141px;
-                        width: 35%;
-                        height: auto;
-                        left: -222px;
+                        position: absolute;
+                        top: 49px;
+                        width: 49%;
+                        max-height: 250px;
+                        left: 277px;
                         z-index: 1000;
                         display: block;
+                        overflow-y:scroll;
                     " class="list-group">
-                    
+
                 </ul>
                 <script>
-                    $(document).ready(function(){
+                    $(document).ready(function() {
                         $('#searchInput').keyup(function() {
                             var search = $('#searchInput').val();
 
                             if (search != "") {
-                                $.ajax(
-                                    {
-                                        url : '/baeshop.com/index.php?act=search',
-                                        method: 'POST',
-                                        data: {search: search},
-                                        success : function (data) {
-                                            $('#dexuat').html(data);
-                                        }
+                                $.ajax({
+                                    url: '/baeshop.com/index.php?act=search',
+                                    method: 'POST',
+                                    data: {
+                                        search: search
+                                    },
+                                    success: function(data) {
+                                        $('#dexuat').html(data);
                                     }
-                                );
-                            }
-                            else {
+                                });
+                            } else {
                                 $('#dexuat').html("");
                             }
                             $(document).on('click', 'li', function() {
@@ -78,7 +70,7 @@
                                 <?php
                                 if (isset($_SESSION['isLogin_Admin'])) { ?>
                                     <li><a class="submenu-a" href="<?php echo URL; ?>admin/?mod=login">Trang quản lý</a></li>
-                                    <?php }
+                                <?php }
                             } else { ?>
                                 <li><b style="color: #0000;">Khách hàng</b></li>
                                 <li><a class="submenu-a" href="<?php echo URL; ?>buyer/login-signup/?buyer-login&act=taikhoan">Đăng nhập</a></li>
@@ -86,7 +78,7 @@
                         </ul>
                     </li>
                     <li id="user-circle" class="js-model"><a href="<?php echo URL; ?>giohang/?act=cart#dxd"> <i class='bx bx-cart'></i></a>
-                        <div  id="dang_nhap" class="cart modal-cart">
+                        <div id="dang_nhap" class="cart modal-cart">
                             <?php
                             if (isset($_SESSION['sanpham'])) {
                                 foreach ($_SESSION['sanpham'] as $value) { ?>
@@ -115,25 +107,26 @@
                     </div>
                 </ul>
             </div>
+            <div class="bg-second">
+                <div class="bottom-header container">
+                    <ul id="submenu" class="main-menu">
+                        <li><a href="<?php echo URL; ?>danhmuc/giay-nike.html">giày nike</a></li>
+                        <li><a href="<?php echo URL; ?>danh-muc/giay-adidas.html">GIÀY ADIDAS</a></li>
+                        <li><a href="<?php echo URL; ?>danh-muc/giay-vans.html">GIÀY VANS</a></li>
+
+                        <!-- mega menu -->
+                        <li class="mega-dropdown">
+                            <a href="<?php echo URL; ?>danh-muc/giay-thuong-hieu-khac.html">giày thương hiệu khác</a>
+                        </li>
+                        <!-- end mega menu -->
+
+                    </ul>
+                </div>
+            </div>
         </div>
         <!-- end mid header -->
         <!-- bottom header -->
-        <div class="bg-second">
-            <div class="bottom-header container">
-                <ul id="submenu" class="main-menu">
-                    <li><a href="<?php echo URL; ?>danhmuc/giay-nike.html">giày nike</a></li>
-                    <li><a href="<?php echo URL; ?>danh-muc/giay-adidas.html">GIÀY ADIDAS</a></li>
-                    <li><a href="<?php echo URL; ?>danh-muc/giay-vans.html">GIÀY VANS</a></li>
 
-                    <!-- mega menu -->
-                    <li class="mega-dropdown">
-                        <a href="<?php echo URL; ?>danh-muc/giay-thuong-hieu-khac.html">giày thương hiệu khác</a>
-                    </li>
-                    <!-- end mega menu -->
-
-                </ul>
-            </div>
-        </div>
         <!-- end bottom header -->
     </div>
     <!-- end main header -->
