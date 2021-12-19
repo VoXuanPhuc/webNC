@@ -75,7 +75,6 @@
 }
 #dang_nhap > li{
     padding: .5rem;
-    
     border-top: .1rem solid var(--grey) ;
     border-radius: 6px;
 }
@@ -86,7 +85,7 @@
 
 .user-menu #user-circle:hover + .section{
     position: relative;
-    z-index: 1;
+    z-index: 10000000000;
 }
 
 /* medium screen */

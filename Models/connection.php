@@ -1,5 +1,5 @@
 <?php 
-    define('URL','http://localhost/baeshop.com/');
+    define('URL','http://localhost:8088/baeshop.com/');
     class connection{
         var $conn;
         function __construct()

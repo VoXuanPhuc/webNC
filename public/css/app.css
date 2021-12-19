@@ -48,6 +48,7 @@ header {
     position: relative;
     left: 0px;
     width: 105%;
+    z-index: 1;
 }
 button {
     cursor: pointer;
@@ -76,6 +77,8 @@ img {
 
 .bg-second {
     background-color: var(--main-bg-color);
+    position: relative;
+    z-index: -1;
 }
 
 .bg-main {
@@ -1719,12 +1722,6 @@ input[type="checkbox"] {
 /* rating */
 
 
-.modal-cart{
-    display: none !important;
-}
-.modal-cart.open{
-    display: block !important;
-}
 /* Rating */
 
 .user-name-vote {
