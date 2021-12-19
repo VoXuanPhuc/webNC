@@ -1,5 +1,5 @@
 <!-- hero section -->
-<div class="container-fluid mt-3 p-0">
+<div class="container-fluid p-0">
     <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
         <div class="carousel-inner">
             <?php $active = true; foreach ($data_banner as $banner): ?>

@@ -15,14 +15,14 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- app css -->
-    <link rel="icon" href="<?php echo URL; ?>public/images/logo/BAEShop_transparent.png">
+    <link rel="icon" href="<?php echo URL; ?>public/images/logo/logo.png">
     <link rel="stylesheet" href="<?php echo URL; ?>public/css/app.css">
     <link rel="stylesheet" href="<?php echo URL; ?>public/css/grid.css">
     <link rel="stylesheet" href="../public/css/app.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" href="../public/css/grid.css?v=<?php echo time(); ?>">
 </head>
 
-<body style="background: #d1eaf8">
+<body>
     <?php
     require_once('Views/header_footer/header.php');
     ?>
