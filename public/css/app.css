@@ -7,15 +7,16 @@
     --grey: #4b4b4b;
     --black: #000;
     --red: #c0392b;
-    --top-header-size: 25px;
+    --top-header-size: 18px;
     --mid-header-size: 50px;
-    --bottom-header-size: 35px;
+    --bottom-header-size: 25px;
     --btn-bg: #000;
     --btn-border-color: #000;
     --btn-color: #ffff;
 }
 
 * {
+
     font-family: Arial, Helvetica, sans-serif;
     padding: 0;
     margin: 0;
@@ -357,17 +358,18 @@ li > b{
 
 .carousel{
     z-index: -2;
+    margin: 10px 0;
 }
 
 /* banner */
 .carousel-inner{
-    width:100%;
-    height: 550px;
+    width: 100%;
+    height: 420px;
 }
 .carousel-inner .carousel-item{
     width: 100%;
     height: 100%;
-    object-fit:contain;
+    object-fit: cover;
 }
 
 
@@ -659,8 +661,8 @@ footer {
     background:var(--main-bg-color);
 }
 .footer-head {
-    margin-bottom: 20px;
-    text-transform: uppercase;
+    /* margin-bottom: 20px;
+    text-transform: uppercase; */
 }
 
 footer ul li {
@@ -680,7 +682,7 @@ footer ul li {
 }
 
 .contact-socials a {
-    font-size: 30px;
+    font-size: 20px;
     margin: 0 10px;
     color: white !important;
 }
@@ -1633,3 +1635,13 @@ input[type="checkbox"] {
       display: block;
     }
   }
+
+#searchInput{
+    width: 100%;
+    height: 40px;
+    font-size: 1rem;
+    border: none;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    padding-left: 1rem;
+    border-radius: 20px;
+}

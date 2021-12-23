@@ -37,6 +37,8 @@ class LoginController
             <link rel="icon" href="../../public/images/logo/BAEShop_transparent.png">
             <link rel="stylesheet" href="../../public/css/app.css">
             <link rel="stylesheet" href="../../public/css/grid.css">
+            <link rel="stylesheet" href="../../public/css/login.css">
+            
         </head>
         
         <body>';

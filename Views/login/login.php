@@ -8,14 +8,13 @@
  </div>
  <div id="container">
      <div class="section-header">
-         <h2>Đăng nhập</h2>
+         <h4 class="active" id="dangnhaph4">Đăng nhập</h4>
+         <h4 id="dangkyh4">Đăng ký</h4>
      </div>
      <div class="dangnhap_dangky">
          <div class="left_dangnhap">
              <div class="">
-                 <h3>KHÁNH HÀNG ĐÃ ĐĂNG KÝ</h3>
                  <div class="lg_dangnhap" id="dangnhap">
-                     <small>Đăng nhập tại đây!</small>
                      <br>
                      <br>
                      <?php if (isset($_COOKIE['msg1'])) { ?>
@@ -27,8 +26,8 @@
                          <input placeholder="Tài Khoản" type="text" name="taikhoan"><br>
                          <br>
                          <input name="matkhau" placeholder="Mật khẩu" type="password"><br>
-                         <a href="#"><small>Quên mật khẩu?</small> </a><br> <br>
-                         <button name="submit" form="form1" class="btn-flat btn-hover" type="submit">
+                         <a href="#" class="mt-2"><small>Quên mật khẩu?</small> </a><br> <br>
+                         <button name="submit" form="form1" class="btn btn btn-hover" type="submit">
                              <span>Đăng nhập</span>
                          </button>
                      </form>
@@ -37,9 +36,7 @@
          </div>
          <div class="right_dangky" id="dangky">
              <div class="">
-                 <h3>Đăng ký</h3>
                  <div class="lg_dangnhap">
-                     <small>Đăng ký tài khoản tại đây!</small>
                      <br>
                      <br>
                      <?php if (isset($_COOKIE['msg'])) { ?>
@@ -53,7 +50,7 @@
                          <input placeholder="Tên" name="Ten" type="text" required>
                          <br>
                          <br>
-                         <input placeholder="Tên đăng nhập" name="TaiKhoan" type="text" required  minlength="6"> 
+                         <input placeholder="Tên đăng nhập" name="TaiKhoan" type="text" required minlength="6">
                          <br>
                          <br>
                          <input placeholder="Địa chỉ email" name="Email" type="text" required><br><br>
@@ -62,7 +59,7 @@
                          <input placeholder="Mật khẩu" name="MatKhau" type="password" minlength="6" required><br><br>
                          <input placeholder="Nhập lại mật khẩu" name="check_password" type="password" minlength="6" required><br>
                          <br>
-                         <button form="form2" class="btn-flat btn-hover" type="submit">
+                         <button form="form2" class="btn btn btn-hover" type="submit">
                              <span>Đăng Ký</span>
                          </button>
                      </form>
@@ -71,3 +68,21 @@
          </div>
      </div>
  </div>
+
+ <script>
+     $(document).ready(function() {
+        $('.right_dangky').hide();
+         $('#dangnhaph4').click(function() {
+            $('#dangnhaph4').addClass("active");
+            $('.left_dangnhap').show(500);
+            $('.right_dangky').hide(200);
+            $('#dangkyh4').removeClass("active");
+         });
+         $('#dangkyh4').click(function() {
+            $('.right_dangky').show(500);
+            $('.left_dangnhap').hide(200);
+            $('#dangkyh4').addClass("active");            
+            $('#dangnhaph4').removeClass("active");
+         });
+     })
+ </script>

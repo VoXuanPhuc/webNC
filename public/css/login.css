@@ -1,39 +1,68 @@
 :root {
-    --main-bg-color: rgb(252, 252, 252);
-    --second-bg-color: #ececec;
+    --main-bg-color: #047ec5;
+    --content-bg-color:#ffff;
+    /* --main-bg-color: rgb(252, 252, 252); */
+    --second-bg-color: #f1f1f1;
     --third-bg-color: #e3e3e3;
     --grey: #4b4b4b;
     --black: #000;
     --red: #c0392b;
-    --top-header-size: 25px;
+    --top-header-size: 18px;
     --mid-header-size: 50px;
-    --bottom-header-size: 35px;
+    --bottom-header-size: 25px;
     --btn-bg: #000;
     --btn-border-color: #000;
-    --btn-color: #fff;
+    --btn-color: #ffff;
 }
+
 #container{
     max-height: 45rem;
+    top: -15rem;
+    margin-bottom: 130px;
 }
 #container .left_dangnhap{
+    height: 350px;
+    top: 10px;
     max-width: 45%;
     background: var(--second-bg-color) ;
     position: relative;
-    left: 3rem;
     text-align: center;
+    left: 28%;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 20px;
+}
+.section-header{
+    position: relative;
+    margin: 10px 0 30px 0;
+    display: flex;
+    justify-content: center;
 }
 
-.dangnhap_dangky, .section-header{
+.section-header h4 {
+    padding: 0 15px;
+    border-bottom: lightgrey solid 1px;
+    cursor: pointer;
+}
+
+.active {
+    padding: 0 15px;
+    border-bottom: #047EC5 solid 2px !important;
+    cursor: pointer;
+}
+
+.dangnhap_dangky{
     position: relative;
-    top: -1rem;
+    margin: 10px 0 30px 0;
 }
 #container .right_dangky{
     max-width: 45%;
-    background: var(--second-bg-color) ;
+    background: white ;
     text-align: center;
     position: relative;
-    left: 52%;
-    top: -17.5rem;
+    left: 28%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 20px
 }
 .left_dangnhap div h3,.right_dangky div h3{
     position: relative;
@@ -44,12 +73,21 @@
 }
 .lg_dangnhap input{
     width: 70%;
-    height: 2rem;
+    height: 40px;
     font-size: 1rem;
     border: none;
-    box-shadow: 0px 0px 1px 1px rgba(85, 85, 85, 0.644) ;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     padding-left: 1rem;
+    border-radius: 20px;
 }
 .lg_dangnhap input:focus{
     outline: none;
+}
+
+.btn {
+    padding: 10px 20px;
+    border-radius: 15px;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    font-size: 14px;
 }
