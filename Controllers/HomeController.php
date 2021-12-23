@@ -14,7 +14,7 @@ class HomeController
 
         $data_chitietDM = array();
 
-        for($i=4; $i <=count($data_danhmuc);$i++){
+        for($i=0; $i < count($data_danhmuc);$i++){
             $data_chitietDM[$i] = $this->home_model->chitietdanhmuc($i);
         }
 
