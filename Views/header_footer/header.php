@@ -110,13 +110,13 @@
             <div class="bg-second">
                 <div class="bottom-header container">
                     <ul id="submenu" class="main-menu">
-                        <li><a href="<?php echo URL; ?>danhmuc/giay-nike.html">giày nike</a></li>
-                        <li><a href="<?php echo URL; ?>danh-muc/giay-adidas.html">GIÀY ADIDAS</a></li>
-                        <li><a href="<?php echo URL; ?>danh-muc/giay-vans.html">GIÀY VANS</a></li>
+                        <li><a href="<?php echo URL; ?>danhmuc/?loai=giay-nike&sp=1&page=1">giày nike</a></li>
+                        <li><a href="<?php echo URL; ?>danhmuc/?loai=giay-adidas&sp=2&page=1">GIÀY ADIDAS</a></li>
+                        <li><a href="<?php echo URL; ?>danhmuc/?loai=giay-vans&sp=3&page=1">GIÀY VANS</a></li>
 
                         <!-- mega menu -->
                         <li class="mega-dropdown">
-                            <a href="<?php echo URL; ?>danh-muc/giay-thuong-hieu-khac.html">giày thương hiệu khác</a>
+                            <a href="<?php echo URL; ?>danhmuc/?loai=khong-ten&sp=3&page=1">giày thương hiệu khác</a>
                         </li>
                         <!-- end mega menu -->
 
