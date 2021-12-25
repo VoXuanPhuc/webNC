@@ -1,7 +1,5 @@
 <div class="col-lg-3 col-md-3 col-sm-0 filter-col" id="filter-col">
-    <div class="box filter-toggle-box">
-        <button class="btn-flat btn-hover" id="filter-close">close</button>
-    </div>
+    
     <div class="box p-0">
         <span class="filter-header px-5 ">
             DANH SÁCH

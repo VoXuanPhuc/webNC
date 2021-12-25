@@ -49,7 +49,7 @@
 			<div class="checkout-desc">
 				<div class = "checkout-desc-text">
 					<span>Tổng sản phẩm : </span>
-					<span class=""><?php echo count($_SESSION['sanpham']); ?></span>
+					<span class=""><?php if(isset($_SESSION['sanpham'])) {echo count($_SESSION['sanpham']); }?></span>
 				</div>
 				<div class = "checkout-desc-price">
 					<span>Tổng thanh toán : </span>

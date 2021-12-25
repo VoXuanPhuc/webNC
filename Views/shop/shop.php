@@ -4,11 +4,11 @@
     <div class="">
         <div class="container">
             <div class="box">
-                <div class="breadcumb">
+                <div class="">
                     <a href="<?php echo URL; ?>">Trang chủ</a>
                     <span><i class='bx bxs-chevrons-right'></i></span>
                     <a href="<?php echo URL; ?>danhmuc/">Cửa hàng</a>
-                    <small style="position: relative;right: -45rem;"><i>Số sản phẩm <?= $data_tong ?></i></small>
+                    <small style="position: relative;right: -44rem;"><i>Số sản phẩm <?= $data_tong ?></i></small>
                 </div>
 
             </div>

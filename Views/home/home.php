@@ -11,14 +11,16 @@ require_once("banner.php");
             <?php
             foreach ($data_danhmuc as $item) { ?>
                 <div class="col-6 col-sm-4 col-lg-2 mx-3">
-                    <a href="type-product-<?= $item['MaDM'] ?>" class="cat-block">
+                    <a href="<?php echo URL; ?>danhmuc" class="cat-block">
                         <figure>
                             <span>
                                 <img src="<?= $item['HinhAnh'] ?>" alt="Category image">
                             </span>
                         </figure>
 
-                        <h6 class="cat-block-title"><?= $item['TenDM'] ?></h6><!-- End .cat-block-title -->
+                        <h6 class="cat-block-title">
+                            <?= $item['TenDM'] ?>
+                        </h6><!-- End .cat-block-title -->
                     </a>
                 </div><!-- End .col-sm-4 col-lg-2 -->
             <?php
