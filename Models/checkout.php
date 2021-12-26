@@ -30,6 +30,9 @@ class Checkout extends Model
 	
 				$status_ct = $this->conn->query($query_ct);
 			}
+			unset($_SESSION['sanpham']);
+
+
 			if ($status_ct == true) {
 				setcookie('msg', 'Đăng ký thành công', time() + 2);
 				echo '<script language="javascript">';

@@ -34,6 +34,8 @@ class HomeController
     }
 
     function search() {
+
+        
         if($_SERVER['REQUEST_METHOD'] == 'POST') {
             $search = $_POST['search'];
             $result = $this->home_model->search($search);

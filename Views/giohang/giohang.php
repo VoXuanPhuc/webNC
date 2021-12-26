@@ -5,119 +5,90 @@
         <a>Giỏ hàng</a>
     </div>
 </div>
-<div style="position: relative; top: 2rem;" class="section" id="blogs">
-    <div class="container">
-        <div class="header">
-            <div class = "header-item col-4" >Sản phẩm</div>
-            <div class = "header-item col-2" >Giá</div>
-            <div class = "header-item col-1" >Kích cỡ</div>
-            <div class = "header-item col-2" >Số lượng</div>
-            <div class = "header-item col-2" >Thành Tiền</div>
-            <div class = "header-item col-1" >Xóa</div>
+<div style="position: relative; top: 2rem; max-width: 1150px; margin:auto; margin-bottom:100px;" class="section grid wide" id="blogs">
+    <div class="section__wrap row">
+		<div class="container col-8">
+			<div class="container__wrap">
+				<div class="header">
+					<div class = "header-item col-4" >Sản phẩm</div>
+					<div class = "header-item col-3" >Số lượng</div>
+					<div class = "header-item col-3" >Thành Tiền</div>
+					<div class = "header-item col-2" >Xóa</div>
+				</div>
+				<div class="content">
+					<?php
+						if (isset($_SESSION['sanpham'])) {
+							foreach ($_SESSION['sanpham'] as $value) { ?>
+								<div class="content__cart">
+									<div class="container__div-first col-4" >
+										<img src="<?php echo URL; ?>public/images/<?= $value['HinhAnh1'] ?>" alt="" class = "cart__img">
+										<p class = "container-cart-name"><?= $value['TenSP'] ?></p>
+									</div>
+									<!-- <div class="col-2"><?= number_format($value['DonGia']) ?> VNĐ</div> -->
+									
+									<div class="col-3">
+										<form action="" method="POST">
+											<div class="plus-minus">
+												<a href="<?php echo URL; ?>./giohang/?act=cart&xuli=delete&id=<?= $value['MaSP'] ?>" class="dec qtybutton" type="button">-</a>&nbsp;&nbsp;
+												<b class="plus-minus-box"><?= $value['SoLuong'] ?></b>&nbsp;&nbsp;
+												<a href="<?php echo URL; ?>./giohang/?act=cart&xuli=update&id=<?= $value['MaSP'] ?>" class="inc qtybutton" type="button">+</a>
+											</div>
+										</form>
+									</div>
+									<div class="col-3"><?= number_format($value['ThanhTien']) ?> VNĐ</div>
+									<div class="col-2"><a href="<?php echo URL; ?>./giohang/?act=cart&xuli=deleteall&id=<?= $value['MaSP'] ?>"><i class='bx bx-eraser'></i></a></div> 
+								</div>                 
+					<?php }
+					} ?>  
+				</div>
+				<div class="content-bottom">
+					<div class="content-bottom-item">
+						<a href="<?php echo URL;?>" class=" btn-block btn-danger btn">< Back</a>
+					</div>
+					<div class="content-bottom-item">
+						<a href="<?php echo URL;?>./giohang/checkout.php" class=" btn-block btn-danger btn ">Mua hàng</a>
+					</div>
+				</div>
+			</div>
         </div>
-        <div class="content">
-            <?php
-                if (isset($_SESSION['sanpham'])) {
-                    foreach ($_SESSION['sanpham'] as $value) { ?>
-                        <div class="content__cart">
-                            <div class="container__div-first col-4" >
-								<input clas="content__cart-input" type="checkbox" value="" name="" id="">
-                                <img src="<?php echo URL; ?>public/images/<?= $value['HinhAnh1'] ?>" alt="" class = "cart__img">
-                                <p class = "container-cart-name"><?= $value['TenSP'] ?></p>
-                            </div>
-                            <div class="col-2"><?= number_format($value['DonGia']) ?> VNĐ</div>
-                            <div class="col-1">
-                                <?php # $value['KichCo'] ?>
-                            </div>
-                            <div class="col-2">
-                                <form action="" method="POST">
-                                    <div class="plus-minus">
-                                        <a href="<?php echo URL; ?>./giohang/?act=cart&xuli=delete&id=<?= $value['MaSP'] ?>" class="dec qtybutton" type="button">-</a>&nbsp;&nbsp;
-                                        <b class="plus-minus-box"><?= $value['SoLuong'] ?></b>&nbsp;&nbsp;
-                                        <a href="<?php echo URL; ?>./giohang/?act=cart&xuli=update&id=<?= $value['MaSP'] ?>" class="inc qtybutton" type="button">+</a>
-                                    </div>
-                                </form>
-                            </div>
-                            <div class="col-2"><?= number_format($value['ThanhTien']) ?> VNĐ</div>
-                            <div class="col-1"><a href="<?php echo URL; ?>./giohang/?act=cart&xuli=deleteall&id=<?= $value['MaSP'] ?>"><i class='bx bx-eraser'></i></a></div> 
-                        </div>                 
-                <?php }
-                } ?>  
-        </div>
+		<div class="col-4">
+			<div class="body">
+				<div class="body-header">Voucher</div>
+				<div class="">
+					<input type="text" class="body-input" placeholder="Nhập voucher...">
+					<button class="body-btn">Áp dụng</button>
+				</div>
+			</div>
+			<div class="body">
+				<div class="body-item">
+					<span class="body-item-desc">Tổng tiền</span>
+					<span class=".color-price"><?= number_format($count) ?>đ</span>
+				</div>
+				<div class="body-item">
+					<span class="body-item-desc">Phí vận chuyển</span>
+					<span class=".color-price">160.000đ</span>
+				</div>
+				<div class="body-item mg-bt-15">
+					<span class="body-item-desc">Thành tiền</span>
+					<span class=".color-price"><?= number_format($count + 160000) ?>đ</span>
+				</div>
 
-		<div class="checkout">
-			<div class="checkout-desc">
-				<div class = "checkout-desc-text">
-					<span>Tổng sản phẩm : </span>
-					<span class=""><?php echo count($_SESSION['sanpham']); ?></span>
+				<div class="body-item border-item-wrap">
+					<div class="body-item_img">
+						<img src="https://logodix.com/logo/1153474.png" alt="" class="body-item_img-cart">
+					</div>
+					<div class="body-item_img">
+						<img src="https://cdn.freebiesupply.com/logos/large/2x/mastercard-6-logo-png-transparent.png" alt="" class="body-item_img-cart">
+					</div>
+					<div class="body-item_img">
+						<img src="https://thumbor.forbes.com/thumbor/fit-in/600x300/https://www.forbes.com/advisor/wp-content/uploads/2020/01/465ae070-3e99-11e9-bfd8-f13e5cef67ba.png" alt="" class="body-item_img-cart">
+					</div>
 				</div>
-				<div class = "checkout-desc-price">
-					<span>Tổng thanh toán : </span>
-					<span class=""><?= number_format($count) ?> đ</span>
-				</div>
-				<div>
-                    <a href="<?php echo URL;?>./giohang/checkout.php" class="btn-block btn-danger btn w-100">Mua hàng</a>
-                </div>
+			
 			</div>
+			
 		</div>
-        <!-- <div class="row margin-top">
-			<div class="col-6">
-				<div class="single-cart-form padding60">
-					<div class="log-title">
-						<h3><strong>Chi tiết đơn hàng</strong></h3>
-					</div>
-					<div class="cart-form-text pay-details table-responsive">
-						<form action="?act=checkout" method="post">
-							<table>
-								<tbody>
-									<tr>
-										<th>Tổng Giỏ Hàng</th>
-										<td><?= number_format($count) ?> VNĐ</td>
-									</tr>
-									<tr>
-										<th>Giảm giá</th>
-										<td>0%</td>
-									</tr>
-									<tr>
-										<th>Vận Chuyển</th>
-										<td>15,000 VNĐ</td>
-									</tr>
-									<tr>
-										<th>Vat</th>
-										<td>0 VNĐ</td>
-									</tr>
-								</tbody>
-								<tfoot>
-									<tr>
-										<th class="tfoot-padd">Tổng tiền</th>
-										<td class="tfoot-padd"><?=number_format($count+15000)?> VNĐ</td>
-									</tr>
-								</tfoot>
-							</table>
-							<div class="submit-text coupon">
-								<button type="submit">Đặt hàng</button>
-							</div>
-						</form>
-					</div>
-				</div>
-			</div>
-			<div class="col-6">
-				<div class="single-cart-form padding60">
-					<div class="log-title">
-						<h3><strong>Mã giảm giá</strong></h3>
-					</div>
-					<div class="cart-form-text custom-input">
-						<p>Nhập mã giảm giá nếu bạn có !!</p>
-						<form action="" method="post">
-							<input type="text" name="subject" placeholder="Nhập mã tại đây..." />
-							<div class="submit-text coupon">
-								<button type="submit">Áp dụng</button>
-							</div>
-						</form>
-					</div>
-				</div>
-			</div>
-		</div> -->
-    </div>
+	</div>
+	
 </div>
 

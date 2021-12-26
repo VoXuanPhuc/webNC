@@ -26,7 +26,7 @@
 					// require_once("../../Models/connection.php");
 					$servername = "localhost";
 					$username = "root";
-					$password = "admin1234";
+					$password = "";
 					$dbname = "baeshop";
 					// tạo connection
 					$conn = mysqli_connect($servername, $username, $password, $dbname);

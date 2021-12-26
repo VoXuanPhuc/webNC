@@ -43,19 +43,6 @@
                 <?php }
                 } ?> 
 
-				<div class="checkout-discount-code row">
-					<div class="discount-code col-6">
-						<span for="">Vocher của shop</span></br>
-						<input type="text" placeholder="Nhập vocher" class="checkout-input">
-						<input type="submit" value = "Áp dụng"  class="btn-block btn-danger btn w-25 checkout-submit">
-					</div>
-					<div class = "sum-price col-6">
-						<div class="price">
-							<span>Tổng : </span>
-							<span class=""><?= number_format($count) ?> VNĐ</span>
-						</div>
-					</div>
-				</div>
 
 				<div class="checkout-bill">
 					<h3 class="checkout-bill-desc">Thông tin hóa đơn</h3>
@@ -75,7 +62,11 @@
 							</div>
 							<div class="checkout-bill-form">
 								<label for="" class="checkout-bill-form-text">Phương thức thanh toán</label>
-								<input type="text" value ="Thanh toán khi nhận hàng" name="tructiep" class="checkout-bill-form-input" required>
+								<select name="tructiep" id="" class="checkout-bill-form-input">
+									<option>Thanh toán khi nhận hàng</option>
+									<option>Thanh toán online</option>
+								</select>
+								<!-- <input type="text" value ="Thanh toán khi nhận hàng" name="tructiep" class="checkout-bill-form-input" required> -->
 							</div>
 							<div class="checkout-bill-form">
 								<label for="" class="checkout-bill-form-text">Địa chỉ nhận hàng</label>
