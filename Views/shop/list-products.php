@@ -1,7 +1,5 @@
 <div class="col-lg-9 col-md-9 col-sm-12">
-    <div class="box filter-toggle-box">
-        <button class="btn-flat btn-hover" id="filter-toggle">filter</button>
-    </div>
+    
     <div class="box">
         <div class="row" id="products">
             <?php

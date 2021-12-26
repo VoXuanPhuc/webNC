@@ -1,5 +1,5 @@
 <!-- Topbar -->
-<nav class="navbar navbar-expand navbar-light topbar mb-4 shadow sticky-top bg-gradient-info">
+<nav class="navbar navbar-expand navbar-light topbar mb-4 shadow sticky-top" style="background-color: #047EC5;">
 
   <!-- Sidebar Toggle (Topbar) -->
   <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">

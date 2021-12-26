@@ -14,7 +14,7 @@ class HomeController
 
         $data_chitietDM = array();
 
-        for($i=4; $i <=count($data_danhmuc);$i++){
+        for($i=0; $i < count($data_danhmuc);$i++){
             $data_chitietDM[$i] = $this->home_model->chitietdanhmuc($i);
         }
 
@@ -22,13 +22,15 @@ class HomeController
         $data_limit2 = $this->home_model->limit(4,4);
         $data_limit3 = $this->home_model->limit(8,4);
         $data_limit4 = $this->home_model->limit(12,4);
+
+        
         $data_arr = array($data_limit1,$data_limit2,$data_limit3,$data_limit4);
         $data_random = $this->home_model->random(2);
 
         $data_banner = $this->home_model->banner(0,4);
 
-        $data_sanpham1 = $this->home_model->sanpham_danhmuc(0,16,1);
-        $data_sanpham2 = $this->home_model->sanpham_danhmuc(0,10,2);
+        $data_sanpham1 = $this->home_model->top_sp_moinhat();
+        $data_sanpham2 = $this->home_model->top_sp_banchay();
 
         require_once('Views/index.php');
     }
