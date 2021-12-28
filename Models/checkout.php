@@ -52,9 +52,10 @@ class Checkout extends Model
 	function detail($data)
 	{
 
-		$query_detail = "SELECT  hd.MaHD, cthd.MaSP, sp.TenSP, sp.HinhAnh1, cthd.SoLuong, cthd.DonGia
-                    from hoadon as hd, chitiethoadon as cthd, sanpham as sp
-                    where hd.MaHD=cthd.MaHD and cthd.MaSP=sp.MaSP and hd.MaHD= $data ";
+		$query_detail = "SELECT *
+						from hoadon as hd, chitiethoadon as cthd, sanpham as sp
+						where hd.MaHD=cthd.MaHD and cthd.MaSP=sp.MaSP 
+						order by hd.ngaylap desc";
 		$data_listsp = $this->conn->query($query_detail);
 		$data = array();
 		while ($row = $data_listsp->fetch_assoc()) {
@@ -63,3 +64,8 @@ class Checkout extends Model
 		return $data_listsp;
 	}
 }
+
+
+// SELECT  hd.MaHD, cthd.MaSP, sp.TenSP, sp.HinhAnh1, cthd.SoLuong, cthd.DonGia
+//                     from hoadon as hd, chitiethoadon as cthd, sanpham as sp
+//                     where hd.MaHD=cthd.MaHD and cthd.MaSP=sp.MaSP and hd.MaHD= $data 

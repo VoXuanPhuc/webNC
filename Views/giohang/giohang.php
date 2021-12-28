@@ -7,7 +7,7 @@
 </div>
 <div style="position: relative; top: 2rem; max-width: 1150px; margin:auto; margin-bottom:100px;" class="section grid wide" id="blogs">
     <div class="section__wrap row">
-		<div class="container col-8">
+		<div class="container col-8 mg-0">
 			<div class="container__wrap">
 				<div class="header">
 					<div class = "header-item col-4" >Sản phẩm</div>
@@ -17,12 +17,12 @@
 				</div>
 				<div class="content">
 					<?php
-						if (isset($_SESSION['sanpham'])) {
+						if (isset($_SESSION['sanpham'])) {  
 							foreach ($_SESSION['sanpham'] as $value) { ?>
-								<div class="content__cart">
+								<div class="content-cart">
 									<div class="container__div-first col-4" >
 										<img src="<?php echo URL; ?>public/images/<?= $value['HinhAnh1'] ?>" alt="" class = "cart__img">
-										<p class = "container-cart-name"><?= $value['TenSP'] ?></p>
+										<p class = "content-name"><?= $value['TenSP'] ?></p>
 									</div>
 									<!-- <div class="col-2"><?= number_format($value['DonGia']) ?> VNĐ</div> -->
 									
