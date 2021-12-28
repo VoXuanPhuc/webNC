@@ -145,7 +145,7 @@ class LoginController
 
             
 
-                require_once("../../Views/login/login.php");
+                // require_once("../../Views/login/login.php");
 
             
                 require_once("../../Views/header_footer/footer.php");

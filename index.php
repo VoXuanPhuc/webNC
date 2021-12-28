@@ -10,7 +10,11 @@ switch ($mod) {
     case 'home':
         require_once('Controllers/HomeController.php');
         $controller_obj = new HomeController();
-        $controller_obj->list();
+        if (isset($_GET['code'])) {
+            $controller_obj->loginWithgg();
+        }else {
+            $controller_obj->list();
+        }
         break;
     case 'checkout':
         $act = isset($_GET['xuli']) ? $_GET['xuli'] : "list";
@@ -65,6 +69,10 @@ switch ($mod) {
     default:
         require_once('Controllers/HomeController.php');
         $controller_obj = new Homecontroller();
-        $controller_obj->list();
+        if (isset($_GET['code'])) {
+            $controller_obj->loginWithgg();
+        }else {
+            $controller_obj->list();
+        }
         break;
 }
