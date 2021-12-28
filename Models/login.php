@@ -14,14 +14,14 @@ class Login extends Model
 
         $login = $this->conn->query($query)->fetch_assoc();
         if ($login !== NULL) {
-            if($login['MaQuyen'] == 2){
+            if ($login['MaQuyen'] == 2) {
                 $_SESSION['isLogin_Admin'] = true;
                 $_SESSION['login'] = $login;
-            }else{
-                if($login['MaQuyen'] == 3){
-                $_SESSION['isLogin_Nhanvien'] = true;
-                $_SESSION['login'] = $login;
-                }else{
+            } else {
+                if ($login['MaQuyen'] == 3) {
+                    $_SESSION['isLogin_Nhanvien'] = true;
+                    $_SESSION['login'] = $login;
+                } else {
                     $_SESSION['isLogin'] = true;
                     $_SESSION['login'] = $login;
                 }
@@ -31,19 +31,18 @@ class Login extends Model
             setcookie('msg1', 'Đăng nhập không thành công', time() + 5);
             header('Location: ../../buyer/login-signup/?act=taikhoan#dangnhap');
         }
-        
     }
     function logout()
     {
-        if(isset($_SESSION['isLogin_Admin'])){
+        if (isset($_SESSION['isLogin_Admin'])) {
             unset($_SESSION['isLogin_Admin']);
             unset($_SESSION['login']);
         }
-        if(isset($_SESSION['isLogin_Nhanvien'])){
+        if (isset($_SESSION['isLogin_Nhanvien'])) {
             unset($_SESSION['isLogin_Nhanvien']);
             unset($_SESSION['login']);
         }
-        if(isset($_SESSION['isLogin'])){
+        if (isset($_SESSION['isLogin'])) {
             unset($_SESSION['isLogin']);
             unset($_SESSION['login']);
         }
@@ -101,7 +100,7 @@ class Login extends Model
         $query = "UPDATE NguoiDung SET  $v   WHERE  MaND = " . $_SESSION['login']['MaND'];
 
         $result = $this->conn->query($query);
-        
+
         if ($result == true) {
             setcookie('doimk', 'Cập nhật tài khoản thành công', time() + 2);
             header('Location: ../../buyer/login-signup/?act=taikhoan&xuli=account#doitk');
@@ -110,6 +109,65 @@ class Login extends Model
             header('Location: ../../buyer/login-signup/?act=taikhoan&xuli=account#doitk');
         }
     }
+
+    function generateCode($length)
+    {
+        $chars = "vwxyzABCD02789";
+        $code = "";
+        $clen = strlen($chars) - 1;
+        while (strlen($code) < $length) {
+            $code .= $chars[mt_rand(0, $clen)];
+        }
+        return $code;
+    }
+
+    function insertDataGG($data)
+    {
+        $email = $data['email'];
+        $name = $data['name'];
+        $fisrtname = $data['given_name'];
+        $lastname = $data['family_name'];
+        $gender = $data['gender'];
+
+
+        $query = "SELECT * from nguoidung  WHERE Email = '" . $email . "'";
+
+        $info = $this->conn->query($query)->fetch_assoc();
+
+        if (!$info['MaND']) {
+            $session = $this->generateCode(10);
+            $matkhau = $this->generateCode(10);
+            $sql = "INSERT INTO `nguoidung` (`Ho`, `Ten`, `GioiTinh`, `SDT`, `Email`, `DiaChi`, `TaiKhoan`, `MatKhau`, `MaQuyen`, `TrangThai`, `session`) VALUES
+            ('$lastname','$fisrtname', '$gender', '', '$email', '', '$name' , '$matkhau', 1, 1,'$session');
+            ";
+            $status = $this->conn->query($sql);
+
+            if ($status) {
+
+                $query = "SELECT * from nguoidung  WHERE Email = '" . $email . "'";
+                $login = $this->conn->query($query)->fetch_assoc();
+
+                $_SESSION['isLogin'] = true;
+                $_SESSION['login'] = $login;
+
+                header('Location: ../../baeshop.com');
+            } else {
+                setcookie('msg1', 'Đăng nhập không thành công', time() + 5);
+                header('Location: ../../baeshop.com/buyer/login-signup/?act=taikhoan#dangnhap');
+            }
+        } else {
+            $query = "SELECT * from nguoidung  WHERE Email = '" . $email . "'";
+            $login = $this->conn->query($query)->fetch_assoc();
+
+            $_SESSION['isLogin'] = true;
+            $_SESSION['login'] = $login;
+
+            header('Location: ../../baeshop.com');
+
+            exit();
+        }
+    }
+
     function error()
     {
         header('location: ?act=errors');
