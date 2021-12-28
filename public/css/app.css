@@ -1,5 +1,5 @@
 :root {
-    --main-bg-color: #047ec5;
+    --main-bg-color: #ffff;
     --content-bg-color:#ffff;
     /* --main-bg-color: rgb(252, 252, 252); */
     --second-bg-color: #f1f1f1;
@@ -17,7 +17,7 @@
 
 * {
 
-    font-family: Arial, Helvetica, sans-serif;
+    font-family:'Roboto', sans-serif;
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -79,7 +79,7 @@ img {
 
 .bg-second {
     background-color: var(--main-bg-color);
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    /* box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px; */
     position: relative;
     z-index: -1;
 }
@@ -209,6 +209,7 @@ ul.devided > li:last-child {
 
 .search button.btn-search {
     position: absolute;
+    background-color: #ffff;
     top: 55%;
     transform: translateY(-50%);
     right: 20px;
@@ -224,7 +225,7 @@ ul.devided > li:last-child {
     color: white;
 }
 .user-menu > li {
-    color: white;
+    color: black;
 }
 .user-menu > li > a {
     font-size: 1.5rem;
@@ -244,6 +245,7 @@ li > b{
     color: #000 !important;
 }
 .bottom-header {
+    padding-top: 7px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -262,9 +264,9 @@ li > b{
     font-weight: 500;
     height: 100%;
     text-transform: uppercase;
-    color: white;
+    color: black;
     text-decoration: none;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 .main-menu > li {
@@ -564,7 +566,7 @@ button.btn-flat.btn-hover.btn {
 .product-card-name {
     font-size: 15px;
     margin-bottom: 10px;
-    color: white;
+    color: black;
     text-decoration: none;
 
 }
@@ -1685,7 +1687,8 @@ input[type="checkbox"] {
     height: 40px;
     font-size: 1rem;
     border: none;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    background: #ffff;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     padding-left: 1rem;
     border-radius: 20px;
 }
