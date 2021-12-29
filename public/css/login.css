@@ -1,5 +1,5 @@
 :root {
-    --main-bg-color: #047ec5;
+    --main-bg-color: #ffff;
     --content-bg-color:#ffff;
     /* --main-bg-color: rgb(252, 252, 252); */
     --second-bg-color: #f1f1f1;
@@ -13,6 +13,7 @@
     --btn-bg: #000;
     --btn-border-color: #000;
     --btn-color: #ffff;
+    --text-color: #9a9a9a;
 }
 
 #container{

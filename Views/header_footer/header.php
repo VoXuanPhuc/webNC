@@ -64,7 +64,7 @@
                         <ul id="dang_nhap" class="modal-cart">
                             <?php if (isset($_SESSION['login'])) { ?>
                                 <li><b>Chào <?= $_SESSION['login']['Ho'] ?> <?= $_SESSION['login']['Ten'] ?></b></li>
-                                <li><a class="submenu-a" href="<?php echo URL; ?>giohang/checkout.php?act=checkout&xuli=add">Lịch sử mua hàng</a></li>
+                                <li><a class="submenu-a" href="<?php echo URL; ?>giohang/checkout.php?act=checkout&xuli=detail">Lịch sử mua hàng</a></li>
                                 <li><a class="submenu-a" href="<?php echo URL; ?>buyer/login-signup/?act=taikhoan&xuli=account">Tài khoản</a></li>
                                 <li><a class="submenu-a" href="<?php echo URL; ?>buyer/login-signup/?act=taikhoan&xuli=dangxuat">Đăng xuất</a></li>
                                 <?php
