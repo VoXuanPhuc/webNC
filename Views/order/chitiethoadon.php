@@ -31,7 +31,7 @@
 										Giao hàng thành công
 									</span>
 									<span class="checkout-btn">
-										<a href="<?php echo URL;?>sanpham?act=voteSp&MaHD=<?= $_GET['MaHD'] ?>&id=<?php echo($row_sp['MaSP']);?>" class="checkout-btn-link">Đánh giá</a>
+										<a href="<?php echo URL;?>sanpham?act=voteSp&MaHD=<?= $row_sp['MaHD'] ?>&id=<?php echo($row_sp['MaSP']);?>" class="checkout-btn-link">Đánh giá</a>
 									</span>
 								</div>
 							</div>
@@ -45,7 +45,7 @@
 											<?php echo  $row_sp['TenSP'] ?>
 										</div>
 										<div class="container-wrap-item-quantity">
-											<?php echo  $row_sp['DonGia'] ?>đ x <?php echo  $row_sp['SoLuong'] ?>
+											<?php echo  $row_sp['DonGia'] ?>đ x <?php echo  $row_sp['SL'] ?>
 										</div>
 									</div>
 									<div class="container-wrap-item-total">

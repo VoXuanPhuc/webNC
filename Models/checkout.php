@@ -52,7 +52,7 @@ class Checkout extends Model
 	function detail($data)
 	{
 
-		$query_detail = "SELECT *
+		$query_detail = "SELECT hd.*, cthd.*, cthd.SoLuong as SL, sp.*
 						from hoadon as hd, chitiethoadon as cthd, sanpham as sp
 						where hd.MaHD=cthd.MaHD and cthd.MaSP=sp.MaSP and hd.MaND = '".$_SESSION['login']['MaND']."'
 						order by hd.ngaylap desc";

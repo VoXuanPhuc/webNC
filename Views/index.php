@@ -23,7 +23,8 @@
     <link rel="stylesheet" href="<?php echo URL; ?>public/css/grid.css">
     <link rel="stylesheet" href="../public/css/app.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" href="../public/css/grid.css?v=<?php echo time(); ?>">
-
+    <!-- link icon -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <style>
 
         /* .centent{

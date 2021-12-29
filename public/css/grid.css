@@ -95,7 +95,7 @@
 }
 .user-menu #user-circle:hover #dang_nhap {
     display:block;
-    z-index: 111;
+    z-index: 99999;
 }
 
 .user-menu #user-circle:hover + .section{

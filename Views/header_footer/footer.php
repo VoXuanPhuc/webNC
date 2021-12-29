@@ -1,66 +1,95 @@
-    <!-- footer -->
-    <footer class="container-fluid">
+<footer class="footer">
+    <div class="cta bg-image bg-dark pt-4 pb-5 mb-0" style="background-image: url(<?php echo URL?>public/images/bg-5.jpg);">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-sm-10 col-md-8 col-lg-6">
+                    <div class="cta-heading text-center">
+                        <h3 class="cta-title text-white">Get The Latest Deals</h3><!-- End .cta-title -->
+                        <p class="cta-desc text-white">and receive <span class="font-weight-normal " style="font-weight: 600;">$20
+                                coupon</span> for first shopping</p><!-- End .cta-desc -->
+                    </div><!-- End .text-center -->
+
+                    <form action="#">
+                        <div class="input-group input-group-round">
+                            <input type="email" class="form-control form-control-white" placeholder="Enter your Email Address" aria-label="Email Adress" required>
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" type="submit"><span>Subscribe</span><i class="fas fa-arrow-right"></i></button>
+                            </div><!-- .End .input-group-append -->
+                        </div><!-- .End .input-group -->
+                    </form>
+                </div><!-- End .col-sm-10 col-md-8 col-lg-6 -->
+            </div><!-- End .row -->
+        </div><!-- End .container -->
+    </div><!-- End .cta -->
+    <div class="footer-middle">
         <div class="container">
             <div class="row">
-                <div class="col-lg-3 col-md-6 col-sm-12 col-12">
-                    <h3 class="footer-head">Liên Hệ</h3>
-                    <ul class="menu">
-                        <li><a href="#"><i class='bx bxs-map'></i> 127 Đống Đa, <br> Thanh Bình, Hải Châu, Đà Nẵng</a></li>
-                        <li><a href="#"><i class='bx bxs-phone-call'></i> (+84) 436 171 367
-                                <br><i class='bx bxs-phone-call'></i> (+84) 236 264 236</a></li>
-                        <li><a href="#"><i class='bx bx-mail-send'></i> luckyshoe@gmail.com</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-12 col-12">
-                    <h3 class="footer-head">Tài Khoản</h3>
-                    <ul class="menu">
-                        <li><a href="<?php echo URL; ?>buyer/login-signup/?act=taikhoan"><i class='bx bxs-chevron-right'></i> Tài Khoản</a></li>
-                        <li><a href="#"><i class='bx bxs-chevron-right'></i> Giỏi hàng</a></li>
-                        <li><a href="#"><i class='bx bxs-chevron-right'></i> Thanh toán</a></li>
-                        <li><a href="<?php echo URL; ?>buyer/login-signup/?act=taikhoan"><i class='bx bxs-chevron-right'></i> Đăng nhập</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-12 col-12">
-                    <h3 class="footer-head">Danh Mục</h3>
-                    <ul class="menu">
-                        <li><a href="<?php echo URL;?>danhmuc?giay-nike&sp=1"><i class='bx bxs-chevron-right'></i> Giày Nike</a></li>
-                        <li><a href="<?php echo URL;?>danhmuc?giay-adidas&sp=2"><i class='bx bxs-chevron-right'></i> Giày Adidas</a></li>
-                        <li><a href="<?php echo URL;?>danhmuc?giay-vans&sp=3"><i class='bx bxs-chevron-right'></i> Giày Vans</a></li>
-                        <li><a href="<?php echo URL;?>danhmuc?giay-the-thao&sp=4"><i class='bx bxs-chevron-right'></i> Giày thể thao</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-12 col-12">
-                    <div class="contact">
-                        <h3 class="contact-header">
-                            Lucky Shoe
-                        </h3>
-                        <ul class="contact-socials">
-                            <li><a href="#">
-                                    <i class='bx bxl-facebook-circle'></i>
-                                </a></li>
-                            <li><a href="#">
-                                    <i class='bx bxl-instagram-alt'></i>
-                                </a></li>
-                            <li><a href="#">
-                                    <i class='bx bxl-youtube'></i>
-                                </a></li>
-                            <li><a href="#">
-                                    <i class='bx bxl-twitter'></i>
-                                </a></li>
-                        </ul>
-                    </div>
-                    
-                    <div class="input-group mb-3 subscribe">
-                        <input type="text" class="form-control" placeholder="Nhập email của bạn" aria-label="Recipient's username" aria-describedby="basic-addon2">
-                        <div class="input-group-append">
-                            <button class="input-group-text" id="basic-addon2">Đăng ký</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <div class="endfooter">
-        <div>© LuckyShoe <?php echo date('Y'); ?>. All Rights Reserved.</div>
-    </div>
-    <!-- end footer -->
+                <div class="col-sm-6 col-lg-3">
+                    <div class="widget widget-about">
+                        <img src="<?php echo URL?>public/images/logo/logoft.png" class="footer-logo" alt="Footer Logo" width="120" height="120">
+                        <p>Làm sao bạn có thể sống một cuộc sống hiện đại mà không có nổi một đôi giày thể thao</p>
+
+                        <div class="widget-call">
+                            <i class="icon-phone"></i>
+                            Hãy gọi cho chúng tôi 24/7
+                            <a href="tel:#">+84 866 171 367</a>
+                        </div><!-- End .widget-call -->
+                    </div><!-- End .widget about-widget -->
+                </div><!-- End .col-sm-6 col-lg-3 -->
+
+                <div class="col-sm-6 col-lg-3">
+                    <div class="widget">
+                        <h4 class="widget-title">Liên kết hữu ích</h4><!-- End .widget-title -->
+
+                        <ul class="widget-list">
+                            <li><a href="about.html">Về Lucky Shoe</a></li>
+                            <li><a href="#">Dịch vụ của chúng tôi</a></li>
+                            <li><a href="#">Cách mua sắm trên Lucky Shoe</a></li>
+                            <li><a href="#">Câu hỏi thường gặp</a></li>
+                            <li><a href="contact">Contact us</a></li>
+                        </ul><!-- End .widget-list -->
+                    </div><!-- End .widget -->
+                </div><!-- End .col-sm-6 col-lg-3 -->
+
+                <div class="col-sm-6 col-lg-3">
+                    <div class="widget">
+                        <h4 class="widget-title">Dịch vụ khách hàng</h4><!-- End .widget-title -->
+
+                        <ul class="widget-list">
+                            <li><a href="#">Phương thức thanh toán</a></li>
+                            <li><a href="#">Đảm bảo lại tiền</a></li>
+                            <li><a href="#">Lợi nhuận</a></li>
+                            <li><a href="#">Đang chuyển hàng</a></li>
+                            <li><a href="#">Các điều khoản</a></li>
+                            <li><a href="#">Chính sách bảo mật</a></li>
+                        </ul><!-- End .widget-list -->
+                    </div><!-- End .widget -->
+                </div><!-- End .col-sm-6 col-lg-3 -->
+
+                <div class="col-sm-6 col-lg-3">
+                    <div class="widget">
+                        <h4 class="widget-title">Tài khoản của tôi</h4><!-- End .widget-title -->
+
+                        <ul class="widget-list">
+                            <li><a href="#">Đăng nhập</a></li>
+                            <li><a href="#">Xem giỏ hàng</a></li>
+                            <li><a href="#">Sản phẩm yêu thích</a></li>
+                            <li><a href="#">Theo dõi đơn hàng của tôi</a></li>
+                            <li><a href="#">Giúp đỡ</a></li>
+                        </ul><!-- End .widget-list -->
+                    </div><!-- End .widget -->
+                </div><!-- End .col-sm-6 col-lg-3 -->
+            </div><!-- End .row -->
+        </div><!-- End .container -->
+    </div><!-- End .footer-middle -->
+
+    <div class="footer-bottom">
+        <div class="container d-flex justify-content-between">
+            <p class="footer-copyright">Copyright © 2021 Lucky Shoe. All Rights Reserved.</p>
+            <!-- End .footer-copyright -->
+            <figure class="footer-payments">
+                <img src="<?php echo URL?>public/images/payments.png" alt="Payment methods" width="272" height="20">
+            </figure><!-- End .footer-payments -->
+        </div><!-- End .container -->
+    </div><!-- End .footer-bottom -->
+</footer><!-- End .footer -->
