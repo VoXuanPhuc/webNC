@@ -39,12 +39,7 @@ class GioithieuController
         
         <body>';
                 require_once("../Views/header_footer/header.php");
-
-            
-
                 require_once("../Views/blogs/index.php");
-
-            
                 require_once("../Views/header_footer/footer.php");
             '
             <script src="<?php echo URL; ?>public/js/index.js"></script>
