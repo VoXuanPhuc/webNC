@@ -54,7 +54,7 @@ class Checkout extends Model
 
 		$query_detail = "SELECT *
 						from hoadon as hd, chitiethoadon as cthd, sanpham as sp
-						where hd.MaHD=cthd.MaHD and cthd.MaSP=sp.MaSP 
+						where hd.MaHD=cthd.MaHD and cthd.MaSP=sp.MaSP and hd.MaND = '".$_SESSION['login']['MaND']."'
 						order by hd.ngaylap desc";
 		$data_listsp = $this->conn->query($query_detail);
 		$data = array();

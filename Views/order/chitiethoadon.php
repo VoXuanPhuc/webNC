@@ -31,7 +31,7 @@
 										Giao hàng thành công
 									</span>
 									<span class="checkout-btn">
-										<a href="" class="checkout-btn-link">Đánh giá</a>
+										<a href="<?php echo URL;?>sanpham?act=voteSp&MaHD=<?= $_GET['MaHD'] ?>&id=<?php echo($row_sp['MaSP']);?>" class="checkout-btn-link">Đánh giá</a>
 									</span>
 								</div>
 							</div>
