@@ -136,9 +136,8 @@ class Login extends Model
 
         if (!$info['MaND']) {
             $session = $this->generateCode(10);
-            $matkhau = $this->generateCode(10);
             $sql = "INSERT INTO `nguoidung` (`Ho`, `Ten`, `GioiTinh`, `SDT`, `Email`, `DiaChi`, `TaiKhoan`, `MatKhau`, `MaQuyen`, `TrangThai`, `session`) VALUES
-            ('$lastname','$fisrtname', '$gender', '', '$email', '', '$name' , '$matkhau', 1, 1,'$session');
+            ('$lastname','$fisrtname', '$gender', '', '$email', '', '$name' , 'e10adc3949ba59abbe56e057f20f883e', 1, 1,'$session');
             ";
             $status = $this->conn->query($sql);
 
@@ -147,9 +146,20 @@ class Login extends Model
                 $query = "SELECT * from nguoidung  WHERE Email = '" . $email . "'";
                 $login = $this->conn->query($query)->fetch_assoc();
 
-                $_SESSION['isLogin'] = true;
-                $_SESSION['login'] = $login;
-
+                if($login != null) {
+                    if ($login['MaQuyen'] == 2) {
+                        $_SESSION['isLogin_Admin'] = true;
+                        $_SESSION['login'] = $login;
+                    } else {
+                        if ($login['MaQuyen'] == 3) {
+                            $_SESSION['isLogin_Nhanvien'] = true;
+                            $_SESSION['login'] = $login;
+                        } else {
+                            $_SESSION['isLogin'] = true;
+                            $_SESSION['login'] = $login;
+                        }
+                    }
+                }
                 header('Location: ../../baeshop.com');
             } else {
                 setcookie('msg1', 'Đăng nhập không thành công', time() + 5);
@@ -159,8 +169,20 @@ class Login extends Model
             $query = "SELECT * from nguoidung  WHERE Email = '" . $email . "'";
             $login = $this->conn->query($query)->fetch_assoc();
 
-            $_SESSION['isLogin'] = true;
-            $_SESSION['login'] = $login;
+            if($login != null) {
+                if ($login['MaQuyen'] == 2) {
+                    $_SESSION['isLogin_Admin'] = true;
+                    $_SESSION['login'] = $login;
+                } else {
+                    if ($login['MaQuyen'] == 3) {
+                        $_SESSION['isLogin_Nhanvien'] = true;
+                        $_SESSION['login'] = $login;
+                    } else {
+                        $_SESSION['isLogin'] = true;
+                        $_SESSION['login'] = $login;
+                    }
+                }
+            }
 
             header('Location: ../../baeshop.com');
 

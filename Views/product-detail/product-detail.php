@@ -1,4 +1,5 @@
-<?php if ($data != null) { ?>
+<?php if ($data != null) { 
+    ?>
     <!-- product-detail content -->
     <div class="container-fluid">
         <div class="container">

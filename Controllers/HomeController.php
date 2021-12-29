@@ -65,7 +65,10 @@ class HomeController
             $result = $this->home_model->search($search);
             if (mysqli_num_rows($result)) {
                 while ($row = mysqli_fetch_assoc($result)) {
-                    echo '<li style="cursor: context-menu;" class="list-group-item">' . $row['TenSP'] . '</li>';
+                    echo '<li style="cursor: context-menu;" class="list-group-item d-flex justify-content-between">
+                    <span>' . $row['TenSP'] . '</span>
+                    <img style="border-radius:10px; width="60" height="30" src=" http://localhost/baeshop.com/public/images/' . $row['HinhAnh1'] . '">
+                    </li>';
                 }
             }
         }
