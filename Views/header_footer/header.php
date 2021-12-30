@@ -13,7 +13,7 @@
             <div class="mid-header container" style="position: relative;">
                 <a href="<?php echo URL; ?>" class="logo"><img src="<?php echo URL; ?>public/images/logo/logo.png" alt=""></a>
                 <form autocomplete="off" class="search" action="<?php echo URL; ?>danhmuc/" method="post">
-                    <input id="searchInput" type="text" placeholder="Tìm kiếm..." name="keyword" />
+                    <input id="searchInput" type="text" placeholder="Tìm kiếm ..." name="keyword" />
                     <button class="btn-search">
                         <i class="bx bx-search-alt"></i>
                     </button>
@@ -50,7 +50,7 @@
                             } else {
                                 $('#dexuat').html("");
                             }
-                            $(document).on('click', 'li', function() {
+                            $(document).on('click', 'span', function() {
                                 $('#searchInput').val($(this).text());
                                 $('#dexuat').html('');
                             });

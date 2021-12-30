@@ -14,8 +14,8 @@ class Checkout extends Model
 		$v = trim($v, ",");
 		
 		$query = "INSERT INTO hoadon($f) VALUES ($v);";
-
 		$status = $this->conn->query($query);
+
 		
 		if ($status == true) {
 			$query_mahd = "select MaHD from hoadon ORDER BY NgayLap DESC LIMIT 1";
@@ -27,10 +27,14 @@ class Checkout extends Model
 				$DonGia = $value['DonGia'];
 				$MaHD = $data_mahd['MaHD'];
 				$query_ct = "INSERT INTO chitiethoadon(MaHD,MaSP,SoLuong,DonGia) VALUES ($MaHD,$MaSP,$SoLuong,$DonGia)";
-	
 				$status_ct = $this->conn->query($query_ct);
+
+				$query_sp = "UPDATE sanpham SET SoLuong = SoLuong -1 WHERE MaSP = $MaSP";
+				$status_sp = $this->conn->query($query_sp);
 			}
 			unset($_SESSION['sanpham']);
+
+			
 
 
 			if ($status_ct == true) {
