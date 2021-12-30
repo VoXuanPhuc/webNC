@@ -1470,11 +1470,9 @@ input[type="checkbox"] {
 .body-input{
     border: 1px solid #ccc;
     outline: none;
-    margin-left: 9px;
     font-size: 1.1rem;
     padding: 4px;
     border-radius: 5px;
-    margin-bottom: 10px;
 }
 
 .body-btn{

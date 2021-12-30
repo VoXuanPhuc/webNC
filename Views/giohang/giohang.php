@@ -54,7 +54,7 @@
 		<div class="col-4">
 			<div class="body">
 				<div class="body-header">Voucher</div>
-				<div class="">
+				<div style="display: flex; margin: 0 0 10px 6px;">
 					<input type="text" class="body-input" placeholder="Nhập voucher...">
 					<button class="body-btn">Áp dụng</button>
 				</div>
