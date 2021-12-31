@@ -1,8 +1,8 @@
 <div class="col-lg-3 col-md-3 col-sm-0 filter-col" id="filter-col">
     
     <div class="box p-0">
-        <span class="filter-header px-5 ">
-            DANH SÁCH
+        <span class="filter-header px-3 ">
+            DANH MỤC SẢN PHẨM
         </span>
         <ul class="filter-list list-group">
             <li class="<?php if(isset($_GET['loai'])) {

@@ -26,7 +26,7 @@ class Detail extends Model
             $mand = $_SESSION['login']['MaND'];
             $queryupdatevoute = 
             "UPDATE chitiethoadon cthd, hoadon hd
-            set cthd.voted = 0 where cthd.MaHD = hd.MaHD and hd.MaND =  $mand and cthd.MaSP = $idSP and hd.MaHD = $MaHD";
+            set cthd.voted = 1 where cthd.MaHD = hd.MaHD and hd.MaND =  $mand and cthd.MaSP = $idSP and hd.MaHD = $MaHD";
             $this->conn->query($queryupdatevoute);
             header('Location: ' . '/baeshop.com/sanpham/?id='.$idSP);
         }

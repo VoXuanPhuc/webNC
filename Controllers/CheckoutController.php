@@ -62,7 +62,7 @@ class CheckoutController
             
             </html>';
         } else {
-            header('location: /baeshop.com/');
+            header('location: /baeshop.com/buyer/login-signup/?buyer-login&act=taikhoan');
             echo "<script>alert('Ban Chua Login');</script>"; 
         }
         //  else {
