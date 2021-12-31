@@ -235,7 +235,7 @@ ul.devided>li:last-child {
 }
 
 .user-menu>li {
-    color: black;
+    color: #746262;
 }
 
 .user-menu>li>a {
@@ -983,7 +983,7 @@ div#filter-col {
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     margin: 0px 0 20px 0;
     border-radius: 15px;
-    padding: 0;
+    padding: 0 0 20px 0;
 }
 
 .box-header {
@@ -1470,11 +1470,9 @@ input[type="checkbox"] {
 .body-input{
     border: 1px solid #ccc;
     outline: none;
-    margin-left: 9px;
     font-size: 1.1rem;
     padding: 4px;
     border-radius: 5px;
-    margin-bottom: 10px;
 }
 
 .body-btn{
