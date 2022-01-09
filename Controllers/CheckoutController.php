@@ -26,7 +26,7 @@ class CheckoutController
             }
             echo'<!DOCTYPE html>
             <html lang="vi-vn">
-            
+
             <head>
                 <meta charset="UTF-8">
                 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -45,25 +45,25 @@ class CheckoutController
                 <link rel="stylesheet"
                     href="../public/css/grid.css?v=<?php echo time(); ?>">
             </head>
-            
+
             <body>';
                     require_once("../Views/header_footer/header.php");
 
-                
+
 
                     require_once("../Views/giohang/thanhtoan.php");
 
-                
+
                     require_once("../Views/header_footer/footer.php");
                 '
                 <script src="<?php echo URL; ?>public/js/index.js"></script>
                 <script src="<?php echo URL; ?>public/js/app.js"></script>
             </body>
-            
+
             </html>';
         } else {
             header('location: /baeshop.com/buyer/login-signup/?buyer-login&act=taikhoan');
-            echo "<script>alert('Ban Chua Login');</script>"; 
+            echo "<script>alert('Ban Chua Login');</script>";
         }
         //  else {
         //     header('location: ?buyer-login&act=add');
@@ -88,7 +88,7 @@ class CheckoutController
             'DiaChi' => $_POST['address'],
             'PhuongThucTT' => $_POST['tructiep'],
             'TongTien' => $count,
-            'TrangThai'  =>  'Đã xác nhận',
+            'TrangThai'  =>  '0',
         );
         $this->checkout_model->save($data);
 
@@ -111,14 +111,14 @@ class CheckoutController
             }
         }
 
-        
+
 
 
         //require_once('Views/index.php');
         // header('location: ?act=checkout#dxd');
         echo'<!DOCTYPE html>
             <html lang="vi-vn">
-            
+
             <head>
                 <meta charset="UTF-8">
                 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -138,34 +138,36 @@ class CheckoutController
                 <link rel="stylesheet"
                     href="../public/css/grid.css?v=<?php echo time(); ?>">
             </head>
-            
+
             <body>';
                     require_once("../Views/header_footer/header.php");
 
-                
+
 
                     require_once("../Views/order/order-complete.php");
 
-                
+
                     require_once("../Views/header_footer/footer.php");
                 '
                 <script src="<?php echo URL; ?>public/js/index.js"></script>
                 <script src="<?php echo URL; ?>public/js/app.js"></script>
             </body>
-            
+
             </html>';
     }
 
     function detail($data){
 
-        
+
         $data_sanpham = $this->checkout_model->detail($data);
 
-        
+        $data = $this->checkout_model->account();
+
+
 
         echo'<!DOCTYPE html>
             <html lang="vi-vn">
-            
+
             <head>
                 <meta charset="UTF-8">
                 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -183,25 +185,24 @@ class CheckoutController
                 <link rel="stylesheet" href="<?php echo URL; ?>public/css/app.css">
                 <link rel="stylesheet" href="<?php echo URL; ?>public/css/grid.css">
                 <link rel="stylesheet" href="../public/css/app.css?v=<?php echo time(); ?>">
-                <link rel="stylesheet"
-                    href="../public/css/grid.css?v=<?php echo time(); ?>">
+                <link rel="stylesheet" href="../public/css/grid.css?v=<?php echo time(); ?>">
             </head>
-            
+
             <body>';
                     require_once("../Views/header_footer/header.php");
 
-                
+
 
                     require_once("../Views/order/chitiethoadon.php");
 
-                
+
                     require_once("../Views/header_footer/footer.php");
                 '
                 <script src="<?php echo URL; ?>public/js/index.js"></script>
                 <script src="<?php echo URL; ?>public/js/app.js"></script>
             </body>
-            
+
             </html>';
-        
+
       }
 }

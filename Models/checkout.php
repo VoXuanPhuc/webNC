@@ -12,15 +12,15 @@ class Checkout extends Model
 		}
 		$f = trim($f, ",");
 		$v = trim($v, ",");
-		
+
 		$query = "INSERT INTO hoadon($f) VALUES ($v);";
 		$status = $this->conn->query($query);
 
-		
+
 		if ($status == true) {
 			$query_mahd = "select MaHD from hoadon ORDER BY NgayLap DESC LIMIT 1";
 			$data_mahd = $this->conn->query($query_mahd)->fetch_assoc();
-			
+
 			foreach ($_SESSION['sanpham'] as $value) {
 				$MaSP = $value['MaSP'];
 				$SoLuong = $value['SoLuong'];
@@ -34,7 +34,7 @@ class Checkout extends Model
 			}
 			unset($_SESSION['sanpham']);
 
-			
+
 
 
 			if ($status_ct == true) {
@@ -50,7 +50,7 @@ class Checkout extends Model
 			}
 		}
 
-		
+
 	}
 
 	function detail($data)
@@ -58,7 +58,7 @@ class Checkout extends Model
 
 		$query_detail = "SELECT hd.*, cthd.*, cthd.SoLuong as SL, sp.*
 						from hoadon as hd, chitiethoadon as cthd, sanpham as sp
-						where hd.MaHD=cthd.MaHD and cthd.MaSP=sp.MaSP and hd.MaND = '".$_SESSION['login']['MaND']."'
+						where hd.MaHD=cthd.MaHD and hd.TrangThai = '1' and cthd.MaSP=sp.MaSP and hd.MaND = '".$_SESSION['login']['MaND']."'
 						order by hd.ngaylap desc";
 		$data_listsp = $this->conn->query($query_detail);
 		$data = array();
@@ -67,9 +67,16 @@ class Checkout extends Model
 		}
 		return $data_listsp;
 	}
+
+	function account()
+    {
+        $id = $_SESSION['login']['MaND'];
+        return $this->conn->query("SELECT * from nguoidung where MaND = $id")->fetch_assoc();
+    }
 }
+
 
 
 // SELECT  hd.MaHD, cthd.MaSP, sp.TenSP, sp.HinhAnh1, cthd.SoLuong, cthd.DonGia
 //                     from hoadon as hd, chitiethoadon as cthd, sanpham as sp
-//                     where hd.MaHD=cthd.MaHD and cthd.MaSP=sp.MaSP and hd.MaHD= $data 
+//                     where hd.MaHD=cthd.MaHD and cthd.MaSP=sp.MaSP and hd.MaHD= $data
