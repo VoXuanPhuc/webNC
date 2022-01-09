@@ -28,12 +28,12 @@
         <!-- product-detail content -->
         <div class="container-fluid">
             <div class="container">
-
                 <div class="row product-row">
                     <div class="col-5 col-lg-5 col-md-4 col-12 col-lef-image">
                         <?php if ($data['HinhAnh1'] !=  null) { ?>
-                            <div class="product-img" id="product-img">
-                                <img src="<?php echo URL; ?>public/images/<?= $data['HinhAnh1'] ?>" alt="">
+                            <div class="product-img screen-image" id="product-img">
+                                <img id=featured class="screen-image_img" src="<?php echo URL; ?>public/images/<?= $data['HinhAnh1'] ?>" alt="">
+                                <div id="lens" class="screen-image_cover"></div>
                             </div>
                         <?php } ?>
                         <div class="product-img-list">
@@ -57,15 +57,57 @@
                             <div class="product-info-detail">
                                 <span class="product-info-detail-title">Đã đánh giá:</span>
                                 <span class="rating">
-                                    <i class='bx bxs-star'></i>
-                                    <i class='bx bxs-star'></i>
-                                    <i class='bx bxs-star'></i>
-                                    <i class='bx bxs-star'></i>
-                                    <i class='bx bxs-star-half'></i>
+                                    <?php
+                                    if (!isset($avgStart)) {
+                                        for ($i = 1; $i <= 5; $i++) {
+                                            echo ('<i class="far fa-star"></i>');
+                                        }
+                                    } else {
+                                        for ($i = 1; $i <= 5; $i++) {
+                                            if ($avgStart >= $i) {
+                                                echo ('<i class="fas fa-star"></i>');
+                                            }
+                                        }
+                                        $nuasao = floor($avgStart) - $avgStart;
+                                        if ($nuasao != 0) {
+                                            echo ('<i class="fas fa-star-half"></i>');
+                                        }
+                                        for ($i = $avgStart + 1; $i <= 5; $i++) {
+                                            echo ('<i class="far fa-star"></i>');
+                                        }
+                                    }
+
+                                    ?>
+
+
                                 </span>
                             </div>
                             <p style="font-weight: 0;" class="product-description">
                                 <?= $data['KieuDang'] ?> </p>
+                            <div class="">
+                                <h6 class="">size : </h6>
+                                <div class="d-flex">
+                                    <button value="36" class="btn btn-size">36</button>
+                                    <button value="37" class="btn btn-size">37</button>
+                                    <button value="38" class="btn btn-size">38</button>
+                                    <button value="39" class="btn btn-size">39</button>
+                                    <button value="40" class="btn btn-size">40</button>
+                                    <button value="41" class="btn btn-size">41</button>
+                                    <button value="42" class="btn btn-size">42</button>
+                                </div>
+                            </div>
+                            <div class="">
+                                <h6 class="">color : </h6>
+                                <div class="d-flex">
+                                    <button value="" class="btn btn-color">Xanh rêu</button>
+                                    <button value="" class="btn btn-color">Đỏ</button>
+                                    <button value="" class="btn btn-color">Trắng</button>
+                                    <button value="" class="btn btn-color">Đen</button>
+                                    <button value="" class="btn btn-color">Đen trắng</button>
+                                    <button value="" class="btn btn-color">Hồng nhạt</button>
+                                </div>
+                            </div>
+
                             <div class="product-info-price"><?= number_format($data['DonGia']) ?> ₫</div>
                             <div>
                                 <a href="<?php echo URL; ?>./giohang/checkout.php" class="btn-block btn-danger btn w-50">Mua ngay</a>
@@ -88,40 +130,184 @@
 
                 </div>
 
+
+                <div <?php if ($statusCheck == 1) {
+                            echo "hidden";
+                        } ?> class="box chitietttsp">
+                    <div class="box-header">
+                        Đánh giá tôi
+                    </div>
+                    <div class="container container-rating">
+                        <div class="post">
+                            <div class="text">Thanks for rating us!</div>
+                            <div class="edit">EDIT</div>
+                        </div>
+                        <div class="star-widget">
+                            <input type="radio" name="rate" id="rate-5">
+                            <label for="rate-5" class="fas fa-star"></label>
+                            <input type="radio" name="rate" id="rate-4">
+                            <label for="rate-4" class="fas fa-star"></label>
+                            <input type="radio" name="rate" id="rate-3">
+                            <label for="rate-3" class="fas fa-star"></label>
+                            <input type="radio" name="rate" id="rate-2">
+                            <label for="rate-2" class="fas fa-star"></label>
+                            <input type="radio" name="rate" id="rate-1">
+                            <label for="rate-1" class="fas fa-star"></label>
+                            <form class="form-rating" action="<?php echo URL; ?>sanpham/?act=saveVote" method="post">
+                                <header></header>
+                                <input name="MaSP" value="<?= $data['MaSP'] ?>" type="hidden" />
+                                <input type="hidden" value="<?php if (isset($_GET['MaHD'])) {
+                                                                echo ($_GET['MaHD']);
+                                                            } ?>" name="MaHD" />
+                                <input id="saodg" type="hidden" name="sao">
+                                <div class="textarea">
+                                    <textarea name="noidung" cols="30" placeholder="Đánh giá sản phẩm.."></textarea>
+                                </div>
+                                <div class="btn">
+                                    <button type="submit">Đánh giá</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
                 <?php require_once('danhgia.php'); ?>
 
-                <form class="form-rating" <?php if ($statusCheck == 1) {
-                                                echo "hidden";
-                                            } ?> action="<?php echo URL; ?>sanpham/?act=saveVote" method="post">
-                    <div class="input-group">
-                        <input type="hidden" value="<?php if (isset($_GET['MaHD'])) {
-                                                        echo ($_GET['MaHD']);
-                                                    } ?>" name="MaHD" />
-                        <input name="MaSP" value="<?= $data['MaSP'] ?>" type="hidden" />
-                        <input name="MaKH" value="14" type="hidden" />
-                        <select name="sao" class="form-select form-select-rating" aria-label="Default select example">
-                            <option selected>Chọn Sao</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                        </select>
-                        <textarea placeholder="nhập cảm nghĩ sản phẩm tại đây" name="noidung" class="form-control form-control-rating-area" aria-label="With textarea"></textarea>
-                        <button type="submit" class="input-group-text">Đánh giá</button>
-                    </div>
-                </form>
+                <?php require_once('sanphamlienquan.php'); ?>
             </div>
-        </div>
 
-        <script src="<?php echo URL; ?>public/js/product-detail.js"></script>
-    <?php } else {
+            <script src="<?php echo URL; ?>public/js/product-detail.js"></script>
+        <?php } else {
         require_once("../Views/error-404.php");
     } ?>
-    <?php require_once("../Views/header_footer/footer.php"); ?>
-    <script src="<?php echo URL; ?>public/js/index.js"></script>
-    <script src="<?php echo URL; ?>public/js/app.js"></script>
+        <?php require_once("../Views/header_footer/footer.php"); ?>
+        <script src="<?php echo URL; ?>public/js/index.js"></script>
+        <script src="<?php echo URL; ?>public/js/app.js"></script>
 
+        <script>
+            $('#rate-1').click(function() {
+                $('#saodg').val(1);
+            });
+            $('#rate-2').click(function() {
+                $('#saodg').val(2);
+            });
+            $('#rate-3').click(function() {
+                $('#saodg').val(3);
+            });
+            $('#rate-4').click(function() {
+                $('#saodg').val(4);
+            });
+            $('#rate-5').click(function() {
+                $('#saodg').val(5);
+            });
+            const btn = document.querySelector("button");
+            const post = document.querySelector(".post");
+            const widget = document.querySelector(".star-widget");
+            const editBtn = document.querySelector(".edit");
+            btn.onclick = () => {
+                widget.style.display = "none";
+                post.style.display = "block";
+                editBtn.onclick = () => {
+                    widget.style.display = "block";
+                    post.style.display = "none";
+                }
+                return false;
+            }
+        </script>
+
+        <script>
+            $("button").click(function() {
+                var fired_button = $(this).val();
+                alert(fired_button);
+            });
+        </script>
+
+        <script>
+            document.getElementById('product-img').addEventListener('mouseover', function() {
+                imageZoom('featured')
+
+            })
+
+            function imageZoom(imgID) {
+                let img = document.getElementById(imgID)
+                let lens = document.getElementById('lens')
+
+                lens.style.backgroundImage = `url( ${img.src} )`
+
+                let ratio = 3
+
+                lens.style.backgroundSize = (img.width * ratio) + 'px ' + (img.height * ratio) + 'px';
+
+                img.addEventListener("mousemove", moveLens)
+                lens.addEventListener("mousemove", moveLens)
+                img.addEventListener("touchmove", moveLens)
+
+                function moveLens() {
+
+
+                    //1
+                    let pos = getCursor()
+                    //console.log('pos:', pos)
+
+                    //2
+                    let positionLeft = pos.x - (lens.offsetWidth / 2)
+                    let positionTop = pos.y - (lens.offsetHeight / 2)
+
+                    //5
+                    if (positionLeft < 0) {
+                        positionLeft = 0
+                    }
+
+                    if (positionTop < 0) {
+                        positionTop = 0
+                    }
+
+                    if (positionLeft > img.width - lens.offsetWidth / 3) {
+                        positionLeft = img.width - lens.offsetWidth / 3
+                    }
+
+                    if (positionTop > img.height - lens.offsetHeight / 3) {
+                        positionTop = img.height - lens.offsetHeight / 3
+                    }
+
+
+                    //3
+                    lens.style.left = positionLeft + 'px';
+                    lens.style.top = positionTop + 'px';
+
+                    //4
+                    lens.style.backgroundPosition = "-" + (pos.x * ratio) + 'px -' + (pos.y * ratio) + 'px'
+                }
+
+                function getCursor() {
+  
+
+                    let e = window.event
+                    let bounds = img.getBoundingClientRect()
+
+                    //console.log('e:', e)
+                    //console.log('bounds:', bounds)
+                    let x = e.pageX - bounds.left
+                    let y = e.pageY - bounds.top
+                    x = x - window.pageXOffset;
+                    y = y - window.pageYOffset;
+
+                    return {
+                        'x': x,
+                        'y': y
+                    }
+                }
+
+            }
+
+            imageZoom('featured')
+
+
+            
+        </script>
 </body>
 
 </html>

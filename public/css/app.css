@@ -2126,3 +2126,170 @@ p {
 .btn-danger {
     color: white !important;
 }
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
+.container-rating{
+  position: relative;
+  width: 400px;
+  background: #D1E7EE;
+  padding: 20px 30px;
+  
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+.container-rating .post{
+  display: none;
+}
+.container-rating .text{
+  font-size: 25px;
+  color: #666;
+  font-weight: 500;
+}
+.container-rating .edit{
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  font-size: 16px;
+  color: #666;
+  font-weight: 500;
+  cursor: pointer;
+}
+.container-rating .edit:hover{
+  text-decoration: underline;
+}
+.container-rating .star-widget input{
+  display: none;
+}
+.star-widget label{
+  font-size: 40px;
+  color: #444;
+  padding: 10px;
+  float: right;
+  transition: all 0.2s ease;
+}
+input:not(:checked) ~ label:hover,
+input:not(:checked) ~ label:hover ~ label{
+  color: rgb(255, 208, 0);
+}
+input:checked ~ label{
+  color: rgb(255, 208, 0);
+}
+input#rate-5:checked ~ label{
+  color: #ffdd00;
+  text-shadow: 0 0 20px #952;
+}
+#rate-1:checked ~ form header:before{
+  content: "Sản phẩm chưa tốt ";
+  color: #ffdd00;
+}
+#rate-2:checked ~ form header:before{
+  content: "Sản phẩm chưa tốt ";
+  color: #ffdd00;
+}
+#rate-3:checked ~ form header:before{
+  content: "Tạm được ";
+  color: #ffdd00;
+}
+#rate-4:checked ~ form header:before{
+  content: "Tôi hài lòng ";
+  color: #ffdd00;
+}
+#rate-5:checked ~ form header:before{
+  content: "Tôi thích sản phẩm này ";
+  color: #ffdd00;
+}
+.container-rating form{
+  display: none;
+}
+input:checked ~ form{
+  display: block;
+}
+.form-rating header{
+  width: 100%;
+  font-size: 25px;
+  color: #fe7;
+  font-weight: 500;
+  margin: 5px 0 20px 0;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+.form-rating .textarea{
+  height: 100px;
+  width: 100%;
+  overflow: hidden;
+}
+.form-rating .textarea textarea{
+  height: 100%;
+  width: 100%;
+  outline: none;
+  color: #4b4b4b;
+  background: white;
+  padding: 10px;
+  font-size: 17px;
+  resize: none;
+}
+.textarea textarea:focus{
+  border-color: white;
+}
+.form-rating .btn{
+  height: 45px;
+  width: 100%;
+  margin: 15px 0;
+}
+.form-rating .btn button{
+  height: 100%;
+  width: 100%;
+  outline: none;
+  background: #0069D9;
+  color: white;
+  border: none;
+  font-size: 15px;
+  font-weight: 500;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 5px;
+}
+.form-rating .btn button:hover{
+    border-radius: 15px;
+}
+
+
+
+.btn-size{
+    border: 1px solid #777;
+    margin: 0 10px;
+}
+
+.btn-color{
+    border: 1px solid #777;
+    margin: 0 10px;
+    font-size: 12px;
+}
+
+
+
+#product-img{
+	z-index: 1;
+	max-width: 500px;
+	position: relative;
+}
+
+#lens{
+	z-index: 2;
+	position: absolute;
+	/* border-radius: 50%; */
+	width: 140px;
+    height: 140px;
+    border-radius: 15px;
+    padding: 10px 10px;
+	background-repeat: no-repeat;
+	/* cursor: none; */
+    top: 10px;
+    left: 10px;
+}

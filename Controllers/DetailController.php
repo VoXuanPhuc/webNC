@@ -15,7 +15,7 @@ class DetailController
 
             $MaND = $_SESSION['login']['MaND'];
             $VoteStatus = $this->detail_model->checkVoted($MaND, $idSP, $MaHD);
-            
+
             if (isset($VoteStatus['voted'])) {
                 $statusCheck = $VoteStatus['voted'];
                 if ($statusCheck == 0) {
@@ -57,13 +57,22 @@ class DetailController
         $id = $_GET['id'];
 
         $data = $this->detail_model->detail_sp($id);
+
+
         $voteSP = $this->detail_model->selectVote($id);
+
+        if (sizeof($voteSP)) {
+            $avgStart = 0;
+            foreach ($voteSP as $start) {
+                $avgStart += $start['sao'];
+            }
+
+            $avgStart = $avgStart / sizeof($voteSP);
+        }
 
         if ($data != null) {
             $data_lq = $this->detail_model->sanpham_danhmuc(0, 4, $data['MaDM']);
         }
-        
-       
         require_once("../Views/product-detail/product-detail.php");
     }
 }
