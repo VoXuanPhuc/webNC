@@ -63,9 +63,7 @@
                     <li id="user-circle" class="js-model"><a><i class='bx bx-user-circle'></i></a>
                         <ul id="dang_nhap" class="modal-cart">
                             <?php if (isset($_SESSION['login'])) { ?>
-                                <li><b>Chào <?= $_SESSION['login']['Ho'] ?> <?= $_SESSION['login']['Ten'] ?></b></li>
-                                <li><a class="submenu-a" href="<?php echo URL; ?>giohang/checkout.php?act=checkout&xuli=detail">Lịch sử mua hàng</a></li>
-                                <li><a class="submenu-a" href="<?php echo URL; ?>buyer/login-signup/?act=taikhoan&xuli=account">Tài khoản</a></li>
+                                <li><b><a class="submenu-a" href="<?php echo URL; ?>buyer/login-signup/?act=taikhoan&xuli=info">Chào <?= $_SESSION['login']['Ho'] ?> <?= $_SESSION['login']['Ten'] ?></a></b></li>
                                 <li><a class="submenu-a" href="<?php echo URL; ?>buyer/login-signup/?act=taikhoan&xuli=dangxuat">Đăng xuất</a></li>
                                 <?php
                                 if (isset($_SESSION['isLogin_Admin'])) { ?>

@@ -1,15 +1,15 @@
-<?php 
-    define('URL','http://localhost/baeshop.com/');
+<?php
+    define('URL','http://localhost:8088/baeshop.com/');
     class connection{
         var $conn;
         function __construct()
         {
             //Thong so ket noi CSDL
-            $severname ="localhost"; 
+            $severname ="localhost";
             $username ="root";
-            $password ="admin1234"; 
+            $password ="";
             $db_name ="baeshop";
- 
+
             //Tao ket noi CSDL
             $this->conn = new mysqli($severname,$username,$password,$db_name);
             $this->conn->set_charset("utf8");
