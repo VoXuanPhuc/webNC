@@ -32,13 +32,12 @@ class ShopController
 
 
         if (!isset($_GET['sp']) && !isset($_GET['loai']) && !isset($_GET['page'])) {
-                $id = 1;
-                $limit = 9;
-                $start = ($id - 1) * $limit;
-                $data = $this->shop_model->limit($start, $limit);
-                $data_count = $this->shop_model->count_sp();
-                $data_tong = $data_count['tong'];
-                
+            $id = 1;
+            $limit = 9;
+            $start = ($id - 1) * $limit;
+            $data = $this->shop_model->limit($start, $limit);
+            $data_count = $this->shop_model->count_sp();
+            $data_tong = $data_count['tong'];
         } else {
             if (isset($_GET['sp'])) {
                 $data = $this->shop_model->sanpham_danhmuc(0, 9, $_GET['sp']);
@@ -46,25 +45,39 @@ class ShopController
                 $data_count = $this->shop_model->count_sp_dm($_GET['sp']);
                 $data_tong = $data_count['tong'];
             } else {
-                
-                    $id = isset($_GET['page']) ? $_GET['page'] : 1;
-                    $limit = 9;
-                    $start = ($id - 1) * $limit;
-                    $data = $this->shop_model->limit($start, $limit);
-                    $data_noibat = $this->shop_model->sanpham_noibat();
-                    $data_count = $this->shop_model->count_sp();
-                    $data_tong = $data_count['tong'];
-                    $test = 0;
-            
+
+                $id = isset($_GET['page']) ? $_GET['page'] : 1;
+                $limit = 9;
+                $start = ($id - 1) * $limit;
+                $data = $this->shop_model->limit($start, $limit);
+                $data_noibat = $this->shop_model->sanpham_noibat();
+                $data_count = $this->shop_model->count_sp();
+                $data_tong = $data_count['tong'];
+                $test = 0;
             }
         }
-        
+
         if (isset($_POST['keyword'])) {
             $data = $this->shop_model->keywork($_POST['keyword']);
-        
+
             $data_tong = count($data);
         }
 
         require_once("../Views/shop/shop.php");
+    }
+
+    function loctheogia()
+    {
+
+        $limit = 0;
+        $start = isset($_GET['tu']) ? $_GET['tu'] : 0;
+        $start = $start * 1000;
+        $end = isset($_GET['den']) ? $_GET['den'] : 0;
+        $end = $end * 1000;
+        $data = $this->shop_model->loctheodgia($start, $end, $limit);
+        $data_tong = sizeof($data);
+
+        require_once("../Views/shop/shop.php");
+
     }
 }
