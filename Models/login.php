@@ -50,7 +50,7 @@ class Login extends Model
     }
     function check_account()
     {
-        $query =  "SELECT * from NguoiDung";
+        $query =  "SELECT * from nguoidung";
 
         require("result.php");
 
@@ -68,7 +68,7 @@ class Login extends Model
                 }
                 $f = trim($f, ",");
                 $v = trim($v, ",");
-                $query = "INSERT INTO NguoiDung($f) VALUES ($v);";
+                $query = "INSERT INTO nguoidung($f) VALUES ($v);";
 
                 $status = $this->conn->query($query);
                 if ($status == true) {
@@ -87,7 +87,7 @@ class Login extends Model
     function account()
     {
         $id = $_SESSION['login']['MaND'];
-        return $this->conn->query("SELECT * from NguoiDung where MaND = $id")->fetch_assoc();
+        return $this->conn->query("SELECT * from nguoidung where MaND = $id")->fetch_assoc();
     }
     function update_account($data)
     {
@@ -97,17 +97,14 @@ class Login extends Model
         }
         $v = trim($v, ",");
 
-        $query = "UPDATE NguoiDung SET  $v   WHERE  MaND = " . $_SESSION['login']['MaND'];
+        $query = "UPDATE nguoidung SET  $v   WHERE  MaND = " . $_SESSION['login']['MaND'];
 
         $result = $this->conn->query($query);
 
         if ($result == true) {
-            setcookie('doimk', 'Cập nhật tài khoản thành công', time() + 2);
-            header('Location: ../../buyer/login-signup/?act=taikhoan&xuli=account#doitk');
-        } else {
-            setcookie('doimk', 'Mật khẩu xác nhận không đúng', time() + 2);
-            header('Location: ../../buyer/login-signup/?act=taikhoan&xuli=account#doitk');
+            header('Location: ../../buyer/login-signup/?act=taikhoan&xuli=info');
         }
+
     }
 
     function generateCode($length)

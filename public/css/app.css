@@ -1461,7 +1461,7 @@ input[type="checkbox"] {
 }
 
 .body-header {
-    
+
     padding: 10px;
     font-size: 1.2rem;
     color: #cf2222;
@@ -1551,7 +1551,7 @@ input[type="checkbox"] {
     display: flex;
     /* margin-bottom: 30px; */
     margin: 10px;
-   
+
 }
 
 .header-item {
@@ -1800,6 +1800,7 @@ input[type="checkbox"] {
 
 .container-wrap{
     margin-bottom: 100px;
+    margin-left: 37px;
 }
 
 .container-wrap-item{
@@ -1811,7 +1812,7 @@ input[type="checkbox"] {
     display: flex;
     justify-content: space-between;
     align-items:center;
-    margin: 10px;
+    margin: 0 10px 10px 10px;
     padding: 16px 0;
     border-bottom: 1px solid #ccc;
 }
@@ -1871,7 +1872,7 @@ input[type="checkbox"] {
     justify-content: space-between;
     width: 90%;
 }
-								
+
 .container-wrap-item-quantity{
     font-size: 0.8rem;
     color: #c0392b;
@@ -2118,10 +2119,95 @@ p {
 }
 /* footer */
 
+.btn-danger {
+    color: white !important;
+}
 
 
+/* My info CSS */
+
+.info-desc{
+    margin: 36px 0;
+}
+
+.content-navbar{
+    background-color: #ebebeb;
+    border-radius: 5px;
+    height: 20rem;
+}
 
 
+.header-navbar {
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid #ccc;
+    margin: 0 8px;
+}
+
+.header-navbar-img {
+    width: 50px;
+    height: 60px;
+}
+
+ul.container-info-list {
+    margin-top: 10px;
+}
+
+.header-navbar-info {
+    color: #cb1111;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+li.container-info-item {
+    padding-left: 9px;
+    font-size: 1rem;
+    line-height: 2rem;
+}
+
+.content-info{
+    margin-left: 37px;
+    background: #ebebeb;
+    border-radius: 5px;
+}
+
+.content-info-avatar {
+    text-align: center;
+    position: relative;
+}
+
+.content-info-avatar img {
+    width: 15%;
+}
+
+.content-info-edit-avatar {
+    position: absolute;
+    bottom: 18px;
+    left: 54%;
+}
+
+label.content-info-text {
+    width: 116px;
+    display: inline-block;
+}
+
+.info-form{
+    width: 650px;
+    margin: 0 auto;
+}
+
+.lg_dangnhap-input {
+    width: 75%;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding: 7px;
+    font-size: 1rem;
+}
+
+.btn-info{
+    margin-left: 39%;
+    margin-bottom: 23px;
+}
 
 .btn-danger {
     color: white !important;
@@ -2293,3 +2379,4 @@ input:checked ~ form{
     top: 10px;
     left: 10px;
 }
+
