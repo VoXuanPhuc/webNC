@@ -1,32 +1,5 @@
-<!DOCTYPE html>
-<html lang="vi-vn">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GIÀY BAEShop – Hệ thống giày thể thao số 1 Đà Nẵng</title>
-    <!-- link icon fontawwesome-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- google font -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,900&display=swap" rel="stylesheet">
-    <!-- boxicons -->
-    <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet">
-    <!-- app css -->
-    <link rel="icon" href="../../public/images/logo/BAEShop_transparent.png">
-    <link rel="stylesheet" href="<?php echo URL; ?>public/css/app.css">
-    <link rel="stylesheet" href="<?php echo URL; ?>public/css/grid.css">
-    <link rel="stylesheet" href="<?php echo URL; ?>public/css/login.css">
-    <link rel="stylesheet" href="../public/css/app.css?v=<?php echo time(); ?>">
-    <link rel="stylesheet" href="../public/css/grid.css?v=<?php echo time(); ?>">
-    <link rel="stylesheet" href="../public/css/login.css?v=<?php echo time(); ?>">
-</head>
-
-<body>
-    <?php require_once("../../Views/header_footer/header.php"); ?>
-
-    <div class="container-info grid wide">
+<link rel="stylesheet" href="<?php echo URL; ?>public/css/login.css">
+<div class="container-info grid wide">
         <div class="info-desc">
             <div class="">
                 <a href="<?php echo URL; ?>">Trang chủ</a>
@@ -35,7 +8,7 @@
             </div>
         </div>
         <div class="row" style="padding-left: 16px;">
-            <div class="col-2 container-info-navbar" id="container">
+            <div class="col-2 container-info-navbar" >
                 <div class="content-navbar">
                     <div class="header-navbar">
                         <div class="header-navbar-img">
@@ -92,7 +65,7 @@
                                         <input class="lg_dangnhap-input" placeholder="Địa chỉ email" name="Email" type="text" value="<?php echo  $data['Email'] ?>" disabled><br><br>
                                         <label for="" class="content-info-text">Địa chỉ</label>
                                         <input class="lg_dangnhap-input" placeholder="Địa chỉ" name="DiaChi" type="text" value="<?php echo  $data['DiaChi'] ?>" disabled><br><br>
-                                        <input type="submit" name="submit" value="Chỉnh sửa" class="btn-block  btn btn-info">
+                                        <input type="submit" name="submit" value="Chỉnh sửa" class="btn btn-info">
                                     </form>
                                 </div>
                             </div>
@@ -102,12 +75,3 @@
             </div>
         </div>
     </div>
-
-
-    <?php require_once("../../Views/header_footer/footer.php"); ?>
-
-    <script src="<?php echo URL; ?>public/js/index.js"></script>
-    <script src="<?php echo URL; ?>public/js/app.js"></script>
-</body>
-
-</html>';

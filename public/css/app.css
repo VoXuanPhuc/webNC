@@ -2136,7 +2136,6 @@ p {
     height: 20rem;
 }
 
-
 .header-navbar {
     display: flex;
     align-items: center;
@@ -2182,8 +2181,8 @@ li.container-info-item {
 
 .content-info-edit-avatar {
     position: absolute;
-    bottom: 18px;
-    left: 54%;
+    bottom: 16px;
+    left: 55%;
 }
 
 label.content-info-text {
@@ -2207,6 +2206,8 @@ label.content-info-text {
 .btn-info{
     margin-left: 39%;
     margin-bottom: 23px;
+    background-color: #fff;
+    color: var(--black);
 }
 
 .btn-danger {
@@ -2220,7 +2221,7 @@ label.content-info-text {
   width: 400px;
   background: #D1E7EE;
   padding: 20px 30px;
-  
+
   border-radius: 5px;
   display: flex;
   align-items: center;
