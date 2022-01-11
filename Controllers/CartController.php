@@ -65,18 +65,25 @@ class CartController
     function add_cart()
     {
         $id = $_GET['id'];
+        $size = $_GET['size'];
+        $color = $_GET['color'];
+
         $data = $this->cart_model->detail_sp($id);
         $count = 0;
         if (isset($_SESSION['sanpham'][$id])) {
             $arr = $_SESSION['sanpham'][$id];
             $arr['SoLuong'] = $arr['soluong'] + 1;
             $arr['ThanhTien'] = $arr['soluong'] * $arr["DonGia"];
+            $arr['Size'] = $size;
+            $arr['Color'] = $color;
             $_SESSION['sanpham'][$id] = $arr;
         } else {
             $arr['MaSP'] = $data['MaSP'];
             $arr['TenSP'] = $data['TenSP'];
             $arr['DonGia'] = $data['DonGia'];
             $arr['SoLuong'] = 1;
+            $arr['Size'] = $size;
+            $arr['Color'] = $color;
             $arr['ThanhTien'] = $data['DonGia'];
             $arr['HinhAnh1'] = $data['HinhAnh1'];
             $_SESSION['sanpham'][$id] = $arr;

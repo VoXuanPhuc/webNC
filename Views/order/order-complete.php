@@ -10,7 +10,7 @@
 <!-- order-complete content section start -->
 <section class="checkout-container">
 	<p class="checkout-container-desc">Đơn hàng của bạn đã được nhận. Vui lòng chờ xét duyệt.</p>
-	<a href="<?php echo URL; ?>giohang/checkout.php?act=checkout&xuli=detail" class="btn-block btn-danger btn btn-order-complete">
+	<a href="<?php echo URL; ?>giohang/checkout.php?act=checkout&xuli=detail" class="btn-block btn-danger btn btn-order-complete w-25">
 		Xem lịch sử mua hàng
 	</a>
 </section>

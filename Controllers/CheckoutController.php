@@ -92,8 +92,6 @@ class CheckoutController
         );
         $this->checkout_model->save($data);
 
-
-
     }
     function order_complete()
     {

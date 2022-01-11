@@ -87,33 +87,40 @@
                             <div class="">
                                 <h6 class="">size : </h6>
                                 <div class="d-flex">
-                                    <button value="36" class="btn btn-size">36</button>
-                                    <button value="37" class="btn btn-size">37</button>
-                                    <button value="38" class="btn btn-size">38</button>
-                                    <button value="39" class="btn btn-size">39</button>
-                                    <button value="40" class="btn btn-size">40</button>
-                                    <button value="41" class="btn btn-size">41</button>
-                                    <button value="42" class="btn btn-size">42</button>
+                                    <button value="36" class="btn btn-size buttonsize">36</button>
+                                    <button value="37" class="btn btn-size buttonsize">37</button>
+                                    <button value="38" class="btn btn-size buttonsize">38</button>
+                                    <button value="39" class="btn btn-size buttonsize">39</button>
+                                    <button value="40" class="btn btn-size buttonsize">40</button>
+                                    <button value="41" class="btn btn-size buttonsize">41</button>
+                                    <button value="42" class="btn btn-size buttonsize">42</button>
                                 </div>
                             </div>
                             <div class="">
                                 <h6 class="">color : </h6>
                                 <div class="d-flex">
-                                    <button value="" class="btn btn-color">Xanh rêu</button>
-                                    <button value="" class="btn btn-color">Đỏ</button>
-                                    <button value="" class="btn btn-color">Trắng</button>
-                                    <button value="" class="btn btn-color">Đen</button>
-                                    <button value="" class="btn btn-color">Đen trắng</button>
-                                    <button value="" class="btn btn-color">Hồng nhạt</button>
+                                    <button value="Xanh rêu" class="btn btn-color buttoncolor">Xanh rêu</button>
+                                    <button value="Đỏ" class="btn btn-color buttoncolor">Đỏ</button>
+                                    <button value="Trắng" class="btn btn-color buttoncolor">Trắng</button>
+                                    <button value="Đen" class="btn btn-color buttoncolor">Đen</button>
+                                    <button value="Đen trắng" class="btn btn-color buttoncolor">Đen trắng</button>
+                                    <button value="Hồng nhạt" class="btn btn-color buttoncolor">Hồng nhạt</button>
                                 </div>
                             </div>
 
-                            <div class="product-info-price"><?= number_format($data['DonGia']) ?> ₫</div>
+                            <div class="product-info-price">Giá :  <?= number_format($data['DonGia']) ?> ₫</div>
                             <div>
                                 <a href="<?php echo URL; ?>./giohang/checkout.php" class="btn-block btn-danger btn w-50">Mua ngay</a>
                             </div>
                             <div>
-                                <a href="<?php echo URL; ?>./giohang/?act=cart&xuli=add&id=<?= $data['MaSP'] ?>" class="btn-block btn-danger btn w-50">Thêm vào giỏ hàng</a>
+                                <form action="<?php echo URL; ?>./giohang/" method="get">
+                                    <input type="hidden" name="id" value="<?= $data['MaSP'] ?>">
+                                    <input type="hidden" name="xuli" value="add">
+                                    <input type="hidden" name="act" value="cart">
+                                    <input type="hidden" name="size" value="" id="sizeinput">
+                                    <input type="hidden" name="color" value="" id="colorinput">
+                                    <button type="submit" class="btn-block btn-danger btn w-50">Thêm vào giỏ hàng</button>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -219,9 +226,15 @@
         </script>
 
         <script>
-            $("button").click(function() {
-                var fired_button = $(this).val();
-                alert(fired_button);
+            $(".buttonsize").click(function() {
+                $('#sizeinput').val($(this).val());
+                $(".buttonsize").removeClass('btn-primary');
+                $(this).addClass('btn-primary');
+            });
+            $(".buttoncolor").click(function() {
+                $('#colorinput').val($(this).val());
+                $(".buttoncolor").removeClass('btn-primary');
+                $(this).addClass('btn-primary');
             });
         </script>
 
@@ -283,7 +296,7 @@
                 }
 
                 function getCursor() {
-  
+
 
                     let e = window.event
                     let bounds = img.getBoundingClientRect()
@@ -304,9 +317,6 @@
             }
 
             imageZoom('featured')
-
-
-            
         </script>
 </body>
 
