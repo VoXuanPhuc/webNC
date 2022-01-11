@@ -8,7 +8,7 @@
         </div>
     </div>
     <div class="row" style="padding-left: 16px;">
-        <div class="col-2 container-info-navbar" id="container">
+        <div class="col-2 container-info-navbar">
             <div class="content-navbar">
                 <div class="header-navbar">
                     <div class="header-navbar-img">
@@ -65,7 +65,7 @@
                                     <input class="lg_dangnhap-input" placeholder="Địa chỉ email" name="Email" type="text"  value="<?php echo  $data['Email'] ?>"><br><br>
                                     <label for="" class="content-info-text">Địa chỉ</label>
                                     <input class="lg_dangnhap-input" placeholder="Địa chỉ" name="DiaChi" type="text" value="<?php echo  $data['DiaChi'] ?>" ><br><br>
-                                    <input type="submit" name="submit" value="Cập nhật" class="btn-block  btn btn-info">
+                                    <input type="submit" name="submit" value="Cập nhật" class="  btn btn-info">
                                 </form>
                             </div>
                         </div>

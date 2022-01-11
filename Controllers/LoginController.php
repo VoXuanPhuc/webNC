@@ -17,7 +17,7 @@ class LoginController
             $data_chitietDM[$i] = $this->login_model->chitietdanhmuc($i);
         }
 
-        echo'<!DOCTYPE html>
+        echo '<!DOCTYPE html>
         <html lang="vi-vn">
 
         <head>
@@ -42,15 +42,15 @@ class LoginController
         </head>
 
         <body>';
-                require_once("../../Views/header_footer/header.php");
+        require_once("../../Views/header_footer/header.php");
 
 
 
-                require_once("../../Views/login/login.php");
+        require_once("../../Views/login/login.php");
 
 
-                require_once("../../Views/header_footer/footer.php");
-            '
+        require_once("../../Views/header_footer/footer.php");
+        '
             <script src="<?php echo URL; ?>public/js/index.js"></script>
             <script src="<?php echo URL; ?>public/js/app.js"></script>
         </body>
@@ -121,12 +121,11 @@ class LoginController
         }
         $data = $this->login_model->account();
 
-        echo'<!DOCTYPE html>
+        echo '<!DOCTYPE html>
         <html lang="vi-vn">
 
         <head>
             <meta charset="UTF-8">
-            <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>GIÀY BAEShop – Hệ thống giày thể thao số 1 Đà Nẵng</title>
             <!-- link icon fontawwesome-->
@@ -136,22 +135,28 @@ class LoginController
             <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,900&display=swap" rel="stylesheet">
             <!-- boxicons -->
             <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet">
+
+            <!-- app css -->
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+            <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
             <!-- app css -->
             <link rel="icon" href="../../public/images/logo/BAEShop_transparent.png">
             <link rel="stylesheet" href="../../public/css/app.css">
             <link rel="stylesheet" href="../../public/css/grid.css">
+            <link rel="stylesheet" href="../../public/css/login.css">
+
         </head>
 
         <body>';
-                require_once("../../Views/header_footer/header.php");
+        require_once("../../Views/header_footer/header.php");
 
 
 
-                 require_once("../../Views/login/my-account.php");
+        require_once("../../Views/login/my-account.php");
 
 
-                require_once("../../Views/header_footer/footer.php");
-            '
+        require_once("../../Views/header_footer/footer.php");
+        '
             <script src="<?php echo URL; ?>public/js/index.js"></script>
             <script src="<?php echo URL; ?>public/js/app.js"></script>
         </body>
@@ -170,9 +175,47 @@ class LoginController
         }
         $data = $this->login_model->account();
 
+        echo '<!DOCTYPE html>
+        <html lang="vi-vn">
 
-                require_once("../../Views/login/my-info.php");
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>GIÀY BAEShop – Hệ thống giày thể thao số 1 Đà Nẵng</title>
+            <!-- link icon fontawwesome-->
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <!-- google font -->
+            <link rel="preconnect" href="https://fonts.gstatic.com">
+            <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,900&display=swap" rel="stylesheet">
+            <!-- boxicons -->
+            <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet">
 
+            <!-- app css -->
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+            <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+            <!-- app css -->
+            <link rel="icon" href="../../public/images/logo/BAEShop_transparent.png">
+            <link rel="stylesheet" href="../../public/css/app.css">
+            <link rel="stylesheet" href="../../public/css/grid.css">
+            <link rel="stylesheet" href="../../public/css/login.css">
+
+        </head>
+
+        <body>';
+        require_once("../../Views/header_footer/header.php");
+
+
+
+        require_once("../../Views/login/my-info.php");
+
+
+        require_once("../../Views/header_footer/footer.php");
+        '
+            <script src="<?php echo URL; ?>public/js/index.js"></script>
+            <script src="<?php echo URL; ?>public/js/app.js"></script>
+        </body>
+
+        </html>';
     }
     function update()
     {
