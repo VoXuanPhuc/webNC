@@ -87,7 +87,7 @@ class Shop extends Model
     function loctheodgia($start, $end, $limit)
     {
         $limitEnd = $limit + 9;
-        $query = "SELECT * FROM `sanpham` WHERE $start < DonGia and DonGia < $end LIMIT $limit, $limitEnd";
+        $query = "SELECT * FROM `sanpham` WHERE $start < DonGia and DonGia < $end ORDER BY DonGia LIMIT $limit, $limitEnd";
 
         require("result.php");
 
