@@ -2133,7 +2133,6 @@ p {
 .content-navbar{
     background-color: #ebebeb;
     border-radius: 5px;
-    height: 20rem;
 }
 
 .header-navbar {
@@ -2141,6 +2140,7 @@ p {
     align-items: center;
     border-bottom: 2px solid #ccc;
     margin: 0 8px;
+    padding: 10px 5px;
 }
 
 .header-navbar-img {
@@ -2150,6 +2150,7 @@ p {
 
 ul.container-info-list {
     margin-top: 10px;
+    padding: 10px 20px;
 }
 
 .header-navbar-info {
@@ -2162,6 +2163,8 @@ li.container-info-item {
     padding-left: 9px;
     font-size: 1rem;
     line-height: 2rem;
+    padding: 5px 0;
+
 }
 
 .content-info{
