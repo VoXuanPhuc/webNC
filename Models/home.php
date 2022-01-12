@@ -22,4 +22,9 @@ class Home extends Model
         require("result.php");
         return $data;
     }
+
+    function countDonHang () {
+        $query = "SELECT COUNT(hoadon.MaHD) as SL FROM `hoadon` WHERE hoadon.TrangThai = 0;";
+        return $this->conn->query($query)->fetch_assoc();
+    }
 }

@@ -3,6 +3,12 @@
 <?php
 require_once("banner.php");
 ?>
+<?php
+    if (isset($_SESSION['isLogin_Admin'])) {
+        require_once("notification.php");
+    }
+
+?>
 <div class="container">
     <h4 class="title text-center my-4">Explore Popular Categories</h4><!-- End .title text-center -->
 
