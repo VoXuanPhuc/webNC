@@ -34,6 +34,9 @@ switch ($mod) {
                     case 'account':
                         $controller_obj->account();
                         break;
+                    case 'info':
+                        $controller_obj->info();
+                        break;
                     case 'update':
                         $controller_obj->update();
                         break;

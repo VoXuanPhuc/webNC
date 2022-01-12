@@ -38,8 +38,9 @@
 								<div class="col-3"><?= number_format($value['ThanhTien']) ?> VNĐ</div>
 								<div class="col-2"><a href="<?php echo URL; ?>./giohang/?act=cart&xuli=deleteall&id=<?= $value['MaSP'] ?>"><i class='bx bx-eraser'></i></a></div>
 							</div>
-					<?php }
-					} ?>
+					<?php } } else{?>
+						<div class="cart-empty">Giỏ hàng trống</div>
+					<?php }?>
 				</div>
 				<div class="content-bottom">
 					<div class="content-bottom-item">
@@ -67,23 +68,25 @@
 				</div>
 				<div class="body-item">
 					<span class="body-item-desc">Phí vận chuyển</span>
-					<span class=".color-price">
-						<?php
-						if (isset($value)) {
+					<span class=".color-price"><?php
+						if (isset($_SESSION['sanpham'])) {
+							$value = $_SESSION['sanpham'];
 							$ship = (int)($value['ThanhTien'] * 5 / 100);
-							echo number_format($value['ThanhTien'] * 5 / 100);
-						}
-						?> đ
+							echo number_format($value['ThanhTien'] * 5 / 100) ;
+						}else{
+							echo 0;
+						} ?>đ
 					</span>
 				</div>
 				<div class="body-item mg-bt-15">
 					<span class="body-item-desc">Thành tiền</span>
 					<span class=".color-price">
 						<?php
-						if (isset($value)) {
+						if(isset($ship)){
 						echo  number_format($count + $ship);
-						}
-						?>đ
+						} else {
+							echo 0;
+						}?>đ
 					</span>
 				</div>
 

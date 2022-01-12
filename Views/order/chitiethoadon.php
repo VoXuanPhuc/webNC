@@ -19,10 +19,10 @@
 					</div>
 				</div>
 				<ul class="container-info-list">
-					<li class="container-info-item container-info-item-active">
+					<li class="container-info-item">
 						<a href="<?php echo URL; ?>buyer/login-signup/?act=taikhoan&xuli=info" class="container-info-link">Tài khoản của tôi</a>
 					</li>
-					<li class="container-info-item">
+					<li class="container-info-item container-info-item-active">
 						<a href="<?php echo URL; ?>giohang/checkout.php?act=checkout&xuli=detail" class="container-info-link">Sản phẩm đã mua</a>
 					</li>
 					<li class="container-info-item">
@@ -76,12 +76,22 @@
 												<?php echo  $row_sp['TenSP'] ?>
 											</div>
 											<div class="container-wrap-item-quantity">
-												<?php echo  $row_sp['DonGia'] ?>đ x <?php echo  $row_sp['SL'] ?>
+												<?php echo  number_format($row_sp['DonGia']) ?>đ x <?php echo $row_sp['SL'] ?>
 											</div>
 										</div>
-										<div class="container-wrap-item-total">
-											Tổng tiền:
-											<?php echo $row_sp['TongTien'] ?>đ
+										<div class="">
+											<div class="container-wrap-item-size-color">
+												<div class="container-wrap-item-size">Size:
+													<?php echo  $row_sp['Size'] ?>
+												</div>
+												<div class="container-wrap-item-color">Màu:
+													<?php echo  $row_sp['Color'] ?>
+												</div>
+											</div>
+											<div class="container-wrap-item-total">
+												Tổng tiền:
+												<?php echo number_format($row_sp['TongTien']) ?>đ
+											</div>
 										</div>
 									</div>
 								</div>
