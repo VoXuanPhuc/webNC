@@ -8,7 +8,7 @@
             </div>
         </div>
         <div class="row" style="padding-left: 16px;">
-            <div class="col-2 container-info-navbar" >
+            <div class="col-2 container-info-navbar">
                 <div class="content-navbar">
                     <div class="header-navbar">
                         <div class="header-navbar-img">
