@@ -67,16 +67,22 @@
 				</div>
 				<div class="body-item">
 					<span class="body-item-desc">Phí vận chuyển</span>
-					<span class=".color-price"><?php
-												$ship = (int)($value['ThanhTien'] * 5 / 100);
-												echo number_format($value['ThanhTien'] * 5 / 100) ?>đ
+					<span class=".color-price">
+						<?php
+						if (isset($value)) {
+							$ship = (int)($value['ThanhTien'] * 5 / 100);
+							echo number_format($value['ThanhTien'] * 5 / 100);
+						}
+						?> đ
 					</span>
 				</div>
 				<div class="body-item mg-bt-15">
 					<span class="body-item-desc">Thành tiền</span>
 					<span class=".color-price">
 						<?php
+						if (isset($value)) {
 						echo  number_format($count + $ship);
+						}
 						?>đ
 					</span>
 				</div>
