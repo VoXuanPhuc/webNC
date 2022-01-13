@@ -44,71 +44,69 @@
 			<div class="container-wrap">
 				<div class="">
 					<?php
-					if (isset($data_sanpham)) {
-						foreach ($data_sanpham as $row_sp) { ?>
-							<div class="container-wrap-item">
-								<div class="container-wrap-item-header">
-									<div class="container-wrap-item-header-text">
-										<span class="checkout-btn">
-											<i class="far fa-comment-dots checkout-icon-whit"></i> Chat
-										</span>
-										<span class="checkout-lable-header checkout-lable-header-active">
-											<i class="fas fa-store checkout-icon"></i> Xem shop
-										</span>
-									</div>
-									<div class="container-wrap-item-header-text">
-										<span class="checkout-lable-header">
-											<i class="fas fa-truck checkout-icon"></i>
-											Giao hàng thành công
-										</span>
-										<span class="checkout-btn">
-											<a href="<?php echo URL; ?>sanpham?act=voteSp&MaHD=<?= $row_sp['MaHD'] ?>&id=<?php echo ($row_sp['MaSP']); ?>" class="checkout-btn-link">Đánh giá</a>
-										</span>
-									</div>
+
+					foreach ($data_sanpham as $row_sp) { ?>
+						<div class="container-wrap-item">
+							<div class="container-wrap-item-header">
+								<div class="container-wrap-item-header-text">
+									<span class="checkout-btn">
+										<i class="far fa-comment-dots checkout-icon-whit"></i> Chat
+									</span>
+									<span class="checkout-lable-header checkout-lable-header-active">
+										<i class="fas fa-store checkout-icon"></i> Xem shop
+									</span>
 								</div>
-								<div class="container-wrap-item-body">
-									<div class="container-wrap-item-img">
-										<img src="<?php echo URL; ?>public/images/<?= $row_sp['HinhAnh1'] ?>" alt="">
-									</div>
-									<div class="container-wrap-item-content">
-										<div class="container-wrap-item-price">
-											<div class="container-wrap-item-name">
-												<?php echo  $row_sp['TenSP'] ?>
-											</div>
-											<div class="container-wrap-item-quantity">
-												<?php echo  number_format($row_sp['DonGia']) ?>đ x <?php echo $row_sp['SL'] ?>
-											</div>
+								<div class="container-wrap-item-header-text">
+									<span class="checkout-lable-header">
+										<i class="fas fa-truck checkout-icon"></i>
+										Giao hàng thành công
+									</span>
+									<span class="checkout-btn">
+										<a href="<?php echo URL; ?>sanpham?act=voteSp&MaHD=<?= $row_sp['MaHD'] ?>&id=<?php echo ($row_sp['MaSP']); ?>" class="checkout-btn-link">Đánh giá</a>
+									</span>
+								</div>
+							</div>
+							<div class="container-wrap-item-body">
+								<div class="container-wrap-item-img">
+									<img src="<?php echo URL; ?>public/images/<?= $row_sp['HinhAnh1'] ?>" alt="">
+								</div>
+								<div class="container-wrap-item-content">
+									<div class="container-wrap-item-price">
+										<div class="container-wrap-item-name">
+											<?php echo  $row_sp['TenSP'] ?>
 										</div>
-										<div class="">
-											<div class="container-wrap-item-size-color">
-												<div class="container-wrap-item-size">Size:
-													<?php echo  $row_sp['Size'] ?>
-												</div>
-												<div class="container-wrap-item-color">Màu:
-													<?php echo  $row_sp['Color'] ?>
-												</div>
-											</div>
-											<div class="container-wrap-item-total">
-												Tổng tiền:
-												<?php echo number_format($row_sp['TongTien']) ?>đ
-											</div>
+										<div class="container-wrap-item-quantity">
+											<?php echo  number_format($row_sp['DonGia']) ?>đ x <?php echo $row_sp['SL'] ?>
 										</div>
 									</div>
-								</div>
-								<div class="container-wrap-item-bottom">
-									<div class="checkout-bill-form checkout-btn-submit">
-										<input type="submit" value="Mua lại" name="submit" class="btn-block btn-danger btn" required>
-									</div>
-									<div class="checkout-bill-form checkout-btn-submit">
-										<input type="submit" value="Liên hệ người bán" name="submit" class="btn-block btn-danger btn" required>
+									<div class="">
+										<div class="container-wrap-item-size-color">
+											<div class="container-wrap-item-size">Size:
+												<?php echo  $row_sp['Size'] ?>
+											</div>
+											<div class="container-wrap-item-color">Màu:
+												<?php echo  $row_sp['Color'] ?>
+											</div>
+										</div>
+										<div class="container-wrap-item-total">
+											Tổng tiền:
+											<?php echo number_format($row_sp['TongTien']) ?>đ
+										</div>
 									</div>
 								</div>
 							</div>
+							<div class="container-wrap-item-bottom">
+								<div class="checkout-bill-form checkout-btn-submit">
+									<input type="submit" value="Mua lại" name="submit" class="btn-block btn-danger btn" required>
+								</div>
+								<div class="checkout-bill-form checkout-btn-submit">
+									<input type="submit" value="Liên hệ người bán" name="submit" class="btn-block btn-danger btn" required>
+								</div>
+							</div>
+						</div>
 					<?php
-						}
-					} else {
-						echo ('<span>Chưa mua sản phẩm nào</span>');
-					}?>
+					}
+					?>
 				</div>
 			</div>
 		</div>
