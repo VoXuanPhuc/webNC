@@ -46,11 +46,11 @@
 					<div class="checkout-content-total">
 						<div class="body-item">
 							<span class="body-item-desc">Tổng tiền</span>
-							<span class=".color-price"><?= number_format($count) ?>đ</span>
+							<span class=".color-price"><?= number_format($count) ?> VNĐ</span>
 						</div>
 						<div class="body-item">
 							<span class="body-item-desc">Mã giảm giá</span>
-							<span class=".color-price">0đ</span>
+							<span class=".color-price">0 VNĐ</span>
 						</div>
 
 						<div class="body-item">
@@ -58,17 +58,17 @@
 							<span class=".color-price">
 								<?php
 								if (isset($value)) {
-									$ship = (int)($value['ThanhTien'] * 5 / 100);
-									echo number_format($value['ThanhTien'] * 5 / 100);
-								} ?>đ
+									$ship = $count * 5 / 100;
+									echo number_format($count * 5 / 100);
+								} ?> VNĐ
 							</span>
 						</div>
 						<div class="body-item body-item-active text-red ">
 							<span class="body-item-desc">Thành tiền</span>
 							<span class=".color-price"><?php
 														if (isset($value)) {
-															number_format($count + $ship);
-														} ?>đ</span>
+															echo number_format($count + $ship);
+														} ?> VNĐ</span>
 						</div>
 					</div>
 				</div>
