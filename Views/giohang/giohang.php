@@ -70,9 +70,9 @@
 					<span class="body-item-desc">Phí vận chuyển</span>
 					<span class=".color-price"><?php
 						if (isset($_SESSION['sanpham'])) {
-							$value = $_SESSION['sanpham'];
-							$ship = (int)($value['ThanhTien'] * 5 / 100);
-							echo number_format($value['ThanhTien'] * 5 / 100) ;
+							// $value = $_SESSION['sanpham'];
+							$ship = (int)($count * 5 / 100);
+							echo number_format($count * 5 / 100) ;
 						}else{
 							echo 0;
 						} ?>đ
