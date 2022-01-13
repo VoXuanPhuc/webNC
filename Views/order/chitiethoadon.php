@@ -9,7 +9,7 @@
 	</div>
 	<div class="row" style="padding-left: 16px;">
 		<div class="col-2">
-			<div class="content-navbar">
+			<div class="row content-navbar">
 				<div class="header-navbar">
 					<div class="header-navbar-img">
 						<img src="https://iconape.com/wp-content/png_logo_vector/avatar-4.png" alt="">
@@ -44,7 +44,7 @@
 			<div class="container-wrap">
 				<div class="">
 					<?php
-					if (isset($data_sanpham)) {
+					if (empty($data_sanpham)) {
 						foreach ($data_sanpham as $row_sp) { ?>
 							<div class="container-wrap-item">
 								<div class="container-wrap-item-header">
@@ -106,7 +106,9 @@
 							</div>
 					<?php
 						}
-					} ?>
+					} else {
+						echo ('<span>Chưa mua sản phẩm nào</span>');
+					}?>
 				</div>
 			</div>
 		</div>

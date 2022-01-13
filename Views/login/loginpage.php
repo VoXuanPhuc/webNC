@@ -69,6 +69,16 @@
                          <button form="form2" class="btn btn btn-hover" type="submit">
                              <span>Đăng Ký</span>
                          </button>
+                         <div class="my-2"><small>Or</small> </div>
+                         <div class="d-flex justify-content-center">
+                             <a href="<?php echo($client->createAuthUrl()) ?>">
+                                 <img src="https://banner2.cleanpng.com/20201008/rtv/transparent-google-suite-icon-google-icon-5f7f985ccd60e3.5687494416021975968412.jpg" alt="" width="40px" height="40px" style="border-radius: 50%; object-fit: cover; margin-right: 30px;">
+                             </a>
+                             <a href="">
+                                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Facebook_Logo_%282019%29.png/1200px-Facebook_Logo_%282019%29.png" alt="" width="40px" height="40px" style="border-radius: 50%; object-fit: cover;">
+                             </a>
+
+                         </div>
                      </form>
                  </div>
              </div>
