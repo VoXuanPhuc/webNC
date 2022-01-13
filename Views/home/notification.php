@@ -57,4 +57,7 @@
     $(window).on('load', function() {
         // $('#notification').fadeIn(10000);
     });
+    setTimeout(()=>{
+        $('#notification').addClass('d-none');
+    },5000)
 </script>

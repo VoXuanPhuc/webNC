@@ -166,13 +166,7 @@ class LoginController
 
     function info()
     {
-        $data_danhmuc = $this->login_model->danhmuc();
 
-        $data_chitietDM = array();
-
-        for ($i = 1; $i <= count($data_danhmuc); $i++) {
-            $data_chitietDM[$i] = $this->login_model->chitietdanhmuc($i);
-        }
         $data = $this->login_model->account();
 
         echo '<!DOCTYPE html>

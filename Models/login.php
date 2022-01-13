@@ -86,8 +86,13 @@ class Login extends Model
     }
     function account()
     {
-        $id = $_SESSION['login']['MaND'];
-        return $this->conn->query("SELECT * from nguoidung where MaND = $id")->fetch_assoc();
+        if (isset($_SESSION['login']['MaND'])) {
+            $id = $_SESSION['login']['MaND'];
+            return $this->conn->query("SELECT * from nguoidung where MaND = $id")->fetch_assoc();
+        } else {
+            echo('no user');
+            exit();
+        }
     }
     function update_account($data)
     {
@@ -102,9 +107,11 @@ class Login extends Model
         $result = $this->conn->query($query);
 
         if ($result == true) {
+            $id = $_SESSION['login']['MaND'];
+            $data = $this->conn->query("SELECT * from nguoidung where MaND = $id")->fetch_assoc();
+            $_SESSION['login'] = $data;
             header('Location: ../../buyer/login-signup/?act=taikhoan&xuli=info');
         }
-
     }
 
     function generateCode($length)
@@ -141,9 +148,11 @@ class Login extends Model
             if ($status) {
 
                 $query = "SELECT * from nguoidung  WHERE Email = '" . $email . "'";
+
                 $login = $this->conn->query($query)->fetch_assoc();
 
-                if($login != null) {
+
+                if ($login != null) {
                     if ($login['MaQuyen'] == 2) {
                         $_SESSION['isLogin_Admin'] = true;
                         $_SESSION['login'] = $login;
@@ -166,7 +175,7 @@ class Login extends Model
             $query = "SELECT * from nguoidung  WHERE Email = '" . $email . "'";
             $login = $this->conn->query($query)->fetch_assoc();
 
-            if($login != null) {
+            if ($login != null) {
                 if ($login['MaQuyen'] == 2) {
                     $_SESSION['isLogin_Admin'] = true;
                     $_SESSION['login'] = $login;

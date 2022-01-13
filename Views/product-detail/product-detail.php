@@ -160,6 +160,7 @@
                             <label for="rate-2" class="fas fa-star"></label>
                             <input type="radio" name="rate" id="rate-1">
                             <label for="rate-1" class="fas fa-star"></label>
+
                             <form class="form-rating" action="<?php echo URL; ?>sanpham/?act=saveVote" method="post">
                                 <header></header>
                                 <input name="MaSP" value="<?= $data['MaSP'] ?>" type="hidden" />
@@ -210,6 +211,7 @@
             $('#rate-5').click(function() {
                 $('#saodg').val(5);
             });
+            
             const btn = document.querySelector("button");
             const post = document.querySelector(".post");
             const widget = document.querySelector(".star-widget");

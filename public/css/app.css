@@ -2402,11 +2402,12 @@ input:checked ~ form{
 	z-index: 2;
 	position: absolute;
 	/* border-radius: 50%; */
-	width: 140px;
-    height: 140px;
+	width: 160px;
+    height: 160px;
     border-radius: 15px;
     padding: 10px 10px;
 	background-repeat: no-repeat;
+    object-fit: cover;
 	/* cursor: none; */
     top: 10px;
     left: 10px;

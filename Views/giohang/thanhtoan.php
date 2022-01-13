@@ -84,7 +84,7 @@
 								<input type="email" value="<?= $_SESSION['login']['Email'] ?>" name="email" class="checkout-bill-form-input" required>
 							</div>
 							<div class="checkout-bill-form">
-								<input type="text" pattern="[0-9]+" minlength="10" value="" name="phone" class="checkout-bill-form-input" required placeholder="Số điện thoại">
+								<input type="text" pattern="[0-9]+" minlength="10" value="<?php if (isset($_SESSION['login']['SDT'])) echo ($_SESSION['login']['SDT']) ?>" name="phone" class="checkout-bill-form-input" required placeholder="Số điện thoại">
 							</div>
 							<div class="checkout-bill-form">
 								<select name="tructiep" id="" class="checkout-bill-form-input">
@@ -94,7 +94,7 @@
 								<!-- <input type="text" value ="Thanh toán khi nhận hàng" name="tructiep" class="checkout-bill-form-input" required> -->
 							</div>
 							<div class="checkout-bill-form">
-								<input type="text" value="" name="address" class="checkout-bill-form-input" required placeholder="ĐỊa chỉ nhận hàng">
+								<input type="text" value="<?php if (isset($_SESSION['login']['DiaChi'])) echo ($_SESSION['login']['DiaChi']) ?>" name="address" class="checkout-bill-form-input" required placeholder="ĐỊa chỉ nhận hàng">
 							</div>
 							<div class="checkout-bill-form">
 								<input type="submit" value=" Đặt hàng" name="submit" class="btn-block btn-danger btn w-25 btn-order" required>

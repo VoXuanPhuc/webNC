@@ -8,7 +8,7 @@
         </div>
     </div>
     <div class="row" style="padding-left: 16px;">
-        <div class="col-2 container-info-navbar">
+        <div class="col-3 container-info-navbar">
             <div class="content-navbar">
                 <div class="header-navbar">
                     <div class="header-navbar-img">
@@ -40,7 +40,7 @@
                 </ul>
             </div>
         </div>
-        <div class="col-10 body-info">
+        <div class="col-9 body-info">
             <div id="container ">
                 <div class="content">
                     <div class="content-info" id="dangky">
