@@ -44,7 +44,7 @@
 			<div class="container-wrap">
 				<div class="">
 					<?php
-					if (isset($data_sanpham)) {
+					if (empty($data_sanpham)) {
 						foreach ($data_sanpham as $row_sp) { ?>
 							<div class="container-wrap-item">
 								<div class="container-wrap-item-header">
