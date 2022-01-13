@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>GIÀY BAEShop – Hệ thống giày thể thao số 1 Đà Nẵng</title>
+  <title>Cửa hàng giày dép Lucky Shoe</title>
   <link rel="icon" href="<?php echo URL; ?>public/images/logo/BAEShop_transparent.png">
   <!-- Custom fonts for this template-->
   <link href="public/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">

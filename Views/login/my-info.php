@@ -9,7 +9,7 @@
         </div>
         <div class="row" style="padding-left: 16px;">
             <div class="col-2 container-info-navbar">
-                <div class="content-navbar">
+                <div class="row content-navbar">
                     <div class="header-navbar">
                         <div class="header-navbar-img">
                             <img src="../../public/images/avatar-4.png" alt="">

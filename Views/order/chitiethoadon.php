@@ -9,7 +9,7 @@
 	</div>
 	<div class="row" style="padding-left: 16px;">
 		<div class="col-2">
-			<div class="content-navbar">
+			<div class="row content-navbar">
 				<div class="header-navbar">
 					<div class="header-navbar-img">
 						<img src="https://iconape.com/wp-content/png_logo_vector/avatar-4.png" alt="">
@@ -106,7 +106,9 @@
 							</div>
 					<?php
 						}
-					} ?>
+					} else {
+						echo ('<span>Chưa mua sản phẩm nào</span>');
+					}?>
 				</div>
 			</div>
 		</div>
