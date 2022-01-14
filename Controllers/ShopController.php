@@ -48,7 +48,7 @@ class ShopController
 
                 $id = isset($_GET['page']) ? $_GET['page'] : 1;
                 $limit = 9;
-                $start = ($id - 1) * $limit;
+                $start = ($id - 1) * $limit; // 0 + limit = 9 (0: 9)
                 $data = $this->shop_model->limit($start, $limit);
                 $data_noibat = $this->shop_model->sanpham_noibat();
                 $data_count = $this->shop_model->count_sp();

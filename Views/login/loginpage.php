@@ -60,7 +60,7 @@
                          <input placeholder="Tên đăng nhập" name="TaiKhoan" type="text" required minlength="6">
                          <br>
                          <br>
-                         <input placeholder="Địa chỉ email" name="Email" type="text" required><br><br>
+                         <input type="email" placeholder="Địa chỉ email" name="Email" required><br><br>
                          <input placeholder="Số điện thoại" name="SĐT" type="text" required pattern="[0-9]+" minlength="10"><br>
                          <br>
                          <input placeholder="Mật khẩu" name="MatKhau" type="password" minlength="6" required><br><br>

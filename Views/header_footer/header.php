@@ -66,7 +66,7 @@
                                 <li><b><a class="submenu-a" href="<?php echo URL; ?>buyer/login-signup/?act=taikhoan&xuli=info">Chào <?= $_SESSION['login']['Ho'] ?> <?= $_SESSION['login']['Ten'] ?></a></b></li>
                                 <li><a class="submenu-a" href="<?php echo URL; ?>buyer/login-signup/?act=taikhoan&xuli=dangxuat">Đăng xuất</a></li>
                                 <?php
-                                if (isset($_SESSION['isLogin_Admin'])) { ?>
+                                if (isset($_SESSION['isLogin_Admin']) || $_SESSION['isLogin_Nhanvien']) { ?>
                                     <li><a class="submenu-a" href="<?php echo URL; ?>admin/?mod=login">Trang quản lý</a></li>
                                 <?php }
                             } else { ?>
